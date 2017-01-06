@@ -30,6 +30,15 @@ time, mark, audio, video {
 }
 
 body {
+  font-size: 100%;
+	line-height: 160%;
+	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: center;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+	visibility: hidden;
   line-height: 1;
 }
 
@@ -143,18 +152,6 @@ input, select {
 	ここからプラグインのCSSを流用
 
 ======================================= */
-body {
-	font-size: 100%;
-	line-height: 160%;
-	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
-	color: #000;
-	text-align: center;
-	background: #fff;
-	position: relative;
-	overflow: hidden;
-	visibility: hidden;
-}
-
 a:link { text-decoration:none; color: #000;}
 a:visited { text-decoration:none; color: #000;}
 a:active { text-decoration:none; color: #000;}
@@ -207,14 +204,14 @@ h2 {
 	padding: 100px 0 0 0;
 	text-align: center;
 }
-#stage1 {background:#f8f4e6;}
-#stage2 {background:#f8f4e6;}
-#stage3 {background:#f8f4e6;}
-#stage4 {background:#f8f4e6;}
-#stage5 {background:#f8f4e6;}
-#stage6 {background:#f8f4e6;}
-#stage7 {background:#f8f4e6;}
-#stage8 {background:#f8f4e6;}
+
+#stage2 {
+  background-color: #fff;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: 1.5s;
+}
 
 /* ２ページ
 --------------------------- */
@@ -233,16 +230,19 @@ h2 {
 	top: 10vh;
 	left: 10vw;
 	z-index: 15;
-	background: rgba(255,255,255,0.8);
+	/*background: rgba(255,255,255,0.2);*/
 }
 .artists_detail {
-	display: none;
-	width: 60vw;
-	height: 100vh;
-	position: absolute;
+  position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 20;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+	display: none;
+	width: 70%;
+	height: 50%;
+	z-index: 100;
 	background: rgba(255,255,255,0.9);
 }
 .artists_box ul {
@@ -255,19 +255,9 @@ h2 {
 	margin-left: 5vw;
 	width: 20vw;
 	height: 10vh;
+  transition: 0.7s;
 }
-.artists_hidden {
-	visibility : hidden;
-}
-.blue {
-	background: blue;
-}
-.red {
-	background: red;
-}
-.green {
-	background: green;
-}
+
 /* .stageSlide
 --------------------------- */
 .stageSlide {

@@ -35,6 +35,7 @@ $(function(){
 		'コンタクト'
 	];
 
+
 	var url = document.URL,
 	stageSlide = $('.stageSlide');
 
@@ -252,7 +253,7 @@ $(function(){
 			}
 		});
 
-		// ScrollUpEvent　スクロールアップ時の処理。
+		// ScrollUpEvent スクロールアップ時の処理。
 		function motionUp(){
 			var stageHeightU = setBase.height(),
 			contTopUp = parseInt(setWrap.css('top')),
@@ -278,6 +279,13 @@ $(function(){
 				// ここではスクロールアップで１つ前のページに移動するためー１してあげる。
 				setPrev = acvStageP - 1;
 				$('body').attr('data-page',setPrev);
+
+				switch (setPrev !== 2){
+				case true:
+					$('#stage2').css('background-image', 'none');
+					break;
+				}
+
 				// ページ番号によっては処理を行う。
 				if (setPrev == 2) {
 					navList.addClass('color_change');
@@ -320,7 +328,15 @@ $(function(){
 
 				var acvStageN = parseInt($('body').attr('data-page')),
 				setNext = acvStageN+1;
+
 				$('body').attr('data-page',setNext);
+
+				switch (setNext !== 2){
+				case true:
+					$('#stage2').css('background-image', 'none');
+					break;
+				}
+
 				if (setNext == 2) {
 					navList.addClass('color_change');
 				} else if (setNext == 4) {
@@ -381,6 +397,7 @@ $(function(){
 					setNav = navIndex+1;
 					if(!(setNav == navLength)){
 						$(this).next().click();
+						$('#stage2').css({'background-image': 'none'});
 					}
 				});
 				if(urlHash == 'on'){
@@ -434,16 +451,42 @@ $(function(){
 	}
 
 	// 2ページ目の処理
-	var artists_box = $('.artists_box'),
+	var artist_img = [
+		'url(img/sampleBg.jpg)',
+		'url(img/sampleBg01.jpg)',
+		'url(img/sampleBg02.jpg)',
+		'url(img/sampleBg03.jpg)',
+		'url(img/sampleBg04.jpg)',
+		'url(img/sampleBg05.jpg)',
+		'url(img/sampleBg06.jpg)',
+		'url(img/sampleBg07.jpg)',
+		'url(img/sampleBg08.jpg)'
+	];
+
+	artists_box = $('.artists_box'),
 	artists_box_li = artists_box.find('li');
 	artists_box_li.mouseover(function(){
-		artists_box_li.addClass('artists_hidden');
 		$(this).removeClass('artists_hidden');
+		$('.artists_hidden').css('opacity', '0');
+		var item	= artists_box_li.index(this);
+for (var i = 0; i < 9; i++) {
+			switch (item){
+			case i:
+				$('#stage2').css({'background-image':artist_img[item],
+				
+												});
+				break;
+			}
+		}
 		$(this).on('click', function(){
-			$('.artists_detail').show();
+			$('.artists_detail').fadeIn(1000);
 		});
 	}).mouseout(function(){
-			artists_box_li.removeClass('artists_hidden');
+		$(this).addClass('artists_hidden');
+		$('.artists_hidden').css('opacity', '1');
+			$('#stage2').css({
+											});
 	});
 
-});
+
+});//end
