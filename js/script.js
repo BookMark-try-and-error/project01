@@ -469,11 +469,11 @@ $(function(){
 		$(this).removeClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '0');
 		var item	= artists_box_li.index(this);
-for (var i = 0; i < 9; i++) {
+		for (var i = 0; i < 9; i++) {
 			switch (item){
 			case i:
 				$('#stage2').css({'background-image':artist_img[item],
-				
+
 												});
 				break;
 			}
