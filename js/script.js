@@ -452,19 +452,22 @@ $(function(){
 
 	// 2ページ目の処理
 	var artist_img = [
-		'url(img/sampleBg.jpg)',
-		'url(img/sampleBg01.jpg)',
-		'url(img/sampleBg02.jpg)',
-		'url(img/sampleBg03.jpg)',
-		'url(img/sampleBg04.jpg)',
-		'url(img/sampleBg05.jpg)',
-		'url(img/sampleBg06.jpg)',
-		'url(img/sampleBg07.jpg)',
-		'url(img/sampleBg08.jpg)'
+		'url(img/S__144449578.jpg)',
+		'url(img/S__144449577.jpg)',
+		'url(img/S__144449578.jpg)',
+		'url(img/S__144449577.jpg)',
+		'url(img/S__144449578.jpg)',
+		'url(img/S__144449577.jpg)',
+		'url(img/S__144449578.jpg)',
+		'url(img/S__144449577.jpg)',
+		'url(img/S__144449578.jpg)'
 	];
-
+	var profile_img = [
+		'<img src="img/sampleBg.jpg" alt="">',
+	];
 	artists_box = $('.artists_box'),
 	artists_box_li = artists_box.find('li');
+
 	artists_box_li.mouseover(function(){
 		$(this).removeClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '0');
@@ -472,20 +475,22 @@ $(function(){
 for (var i = 0; i < 9; i++) {
 			switch (item){
 			case i:
-				$('#stage2').css({'background-image':artist_img[item],
-				
-												});
+				$('#stage2').css({'background-image':artist_img[item]});
 				break;
 			}
 		}
 		$(this).on('click', function(){
-			$('.artists_detail').fadeIn(1000);
+			$('.artists_detail').show();
+			$('.menu_trigger').on('click', function (){
+			$('.artists_detail').fadeOut();
+			});
+			$('.image').on('click', function (){
+				$('.image').addClass('rotation');
+			});
 		});
 	}).mouseout(function(){
 		$(this).addClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '1');
-			$('#stage2').css({
-											});
 	});
 
 

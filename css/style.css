@@ -146,7 +146,6 @@ input, select {
 ***********************************/
 
 
-
 /* =======================================
 
 	ここからプラグインのCSSを流用
@@ -205,59 +204,96 @@ h2 {
 	text-align: center;
 }
 
+/* ２ページ
+--------------------------- */
 #stage2 {
   background-color: #fff;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
-  transition: 1.5s;
+  transition: 1s;
 }
-
-/* ２ページ
---------------------------- */
 .overlay {
 	width: 100%;
 	height:100%;
-	//position: fixed;
-	top: 0;
+  background: rgba(0,0,0,0.6);
 	z-index: 5;
-	background: rgba(0,0,0,0.6);
 }
 .artists_box {
-	width: 80vw;
-	height: 80vh;
-	position: absolute;
-	top: 10vh;
-	left: 10vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0;
+	left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+	width: 80%;
+	height: 80%;
 	z-index: 15;
-	/*background: rgba(255,255,255,0.2);*/
+}
+.artists_box ul {
+}
+.artists_box ul li {
+  margin: 10% 0;
+  transition: 0.4s;
 }
 .artists_detail {
+  display: none;
   position: absolute;
 	top: 0;
 	left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-	display: none;
-	width: 70%;
-	height: 50%;
-	z-index: 100;
-	background: rgba(255,255,255,0.9);
+	width: 100%;
+	height: 100%;
+  background: #fff;
+  transition: 1.5s;
+  z-index: 100;
+  -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
-.artists_box ul {
-	width: 80vw;
-	height: 20vh;
-	margin-top: 5vh;
+.menu_trigger{
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  width: 30px;
 }
-.artists_box ul li {
-	float: left;
-	margin-left: 5vw;
-	width: 20vw;
-	height: 10vh;
-  transition: 0.7s;
+.menu_trigger span{
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+.menu_trigger span:nth-of-type(1){
+	transform: translateY(8px) rotate(-45deg);
+}
+.menu_trigger span:nth-of-type(2){
+  transform: translateY(-8px) rotate(45deg);
 }
 
+.image .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  background: #fff;
+  transition: 1s;
+}
+.image{
+  z-index: 100;
+}
+
+.back .rotation{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
 /* .stageSlide
 --------------------------- */
 .stageSlide {
@@ -329,7 +365,6 @@ h2 {
 #containerMenu {
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.3);
 	width: 100vw;
 	height: 60vh;
 	position: fixed;
@@ -396,7 +431,6 @@ h2 {
 }
 .pageNav ul li.activeStage .bor_right {
 	width: 0;
-
 }
 .pageNav ul li a {
 	width: 5vw;
