@@ -472,10 +472,16 @@ $(function(){
 		$(this).removeClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '0');
 		var item	= artists_box_li.index(this);
-for (var i = 0; i < 9; i++) {
+		for (var i = 0; i < 9; i++) {
 			switch (item){
 			case i:
+<<<<<<< HEAD
 				$('#stage2').css({'background-image':artist_img[item]});
+=======
+				$('#stage2').css({'background-image':artist_img[item],
+
+												});
+>>>>>>> e653ef417ef6b73385ecac3adb64a34f0ffd3a24
 				break;
 			}
 		}
