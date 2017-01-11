@@ -1,7 +1,10 @@
 $(function(){
-	var setWrap = $('#container'),
-	setBase = $('.stageBase'),
-	setMenu = $('#menuWrap'),
+	var setWrap = $('.container'),
+	setBase = $('.stageBase'), // スクロールした時の高さを計算。
+	setBasePc = $('.pcUser .stageBase'),
+	setBaseSp = $('.spUser .stageBase'),
+	setMenuPc = $('.pcUser .menuWrap'),
+	setMenuSp = $('.spUser .menuWrap'),
 	scrollSpeed = 1000,
 	scrollEasing = 'swing',
 	slideSpeed = 500,
@@ -35,35 +38,56 @@ $(function(){
 		'コンタクト'
 	];
 
+	//ユーザーエージェント切り替え実装前のテスト用の変数
+	var uA = '',
+			//uA = 'pc';
+			//uA = 'tb';
+			uA = 'sp';
 
 	var url = document.URL,
 	stageSlide = $('.stageSlide');
 
-	// 固定メニュー
-	setMenu.append('<nav id="pageNavLeft" class="pageNav clearfix"><ul></ul></nav>');
-	setMenu.append('<nav id="pageNavRight" class="pageNav clearfix"><ul></ul></nav>');
-	setBase.each(function(i){
-		if (i > 3) {
-			// 右メニュー
-			$('#pageNavRight ul').append('<li class="pagePn'+(i+1)+'"><div class="li_right  left_slide clearfix"><p class="bor_right"></p></div><div class="li_left clearfix"><span class="right_slide"></span><a href="javascript:void(0);">'+(menuList[i])+'</a></div></li>');
-		} else {
-			// 左メニュー
-			$('#pageNavLeft ul').append('<li class="pagePn'+(i+1)+'"><div class="li_right  right_slide clearfix"><span class="left_slide"></span><a href="javascript:void(0);">'+(menuList[i])+'</a></div><div class="li_left clearfix"><p class="bor_left"></p></div></li>');
-		}
-	});
+	/**************************************************
+	   固定メニュー
+	**************************************************/
+	/******PCの処理*****/
+	if (uA == 'pc') {
+		setMenuPc.append('<nav id="pageNavLeft" class="pageNav clearfix"><ul></ul></nav>');
+		setMenuPc.append('<nav id="pageNavRight" class="pageNav clearfix"><ul></ul></nav>');
+		// PCのsection(ページ数)数分メニューを追加
+		setBasePc.each(function(i){
+			if (i < 4) {
+				// 左メニュー
+				$('#pageNavLeft ul').append('<li class="pagePn'+(i+1)+'"><div class="li_left clearfix"><p class="bor_left"></p></div><div class="li_right  right_slide clearfix"><span class="left_slide"></span><a href="javascript:void(0);">'+(menuList[i])+'</a></div></li>');
+			} else {
+				// 右メニュー
+				$('#pageNavRight ul').append('<li class="pagePn'+(i+1)+'"><div class="li_left clearfix"><span class="right_slide"></span><a href="javascript:void(0);">'+(menuList[i])+'</a></div><div class="li_right  left_slide clearfix"><p class="bor_right"></p></div></li>');
+			}
+		});
+	/******SPの処理*****/
+	} else if (uA == 'sp') {
+		setMenuSp.append('<nav class="pageNav clearfix"><ul></ul></nav>');
+		// SPのsection(ページ数)数分メニューを追加
+		setBaseSp.each(function(i){
+			$('.spUser .pageNav ul').append('<li class="pagePn'+(i+1)+'"><a href="javascript:void(0);">'+(menuList[i])+'</a></div></li>');
+		});
+	} // if (uA == 'pc') end
 
 	if(downBtn == 'show'){
 		setWrap.append('<div id="pageDown"><a href="javascript:void(0);"></a></div>');
 	}
 
-	var coreNav = $('#containerMenu'),
+	var coreNav = $('.containerMenu'),
 	setNav = coreNav.find('section'),
 	navList = setNav.find('li'),
 	navLength = navList.length;
 
-	// activeStageを見つけてシャッフル表示
+	// メニューの先頭にactiveStageクラスを追加
 	setNav.find('li:first').addClass('activeStage');
-	$('.activeStage a').text(menuListActive[0]);
+	/******PCの処理*****/
+	if (uA == 'pc') {
+		$('.activeStage a').text(menuListActive[0]);
+	}
 	$('body').attr('data-page','1');
 
 	$(window).load(function(){
@@ -84,7 +108,9 @@ $(function(){
 				});
 			}
 
-			// メニューの表示位置
+			/**************************************************
+			   メニューの表示位置
+			**************************************************/
 			coreNav.each(function(){
 				var navHeight = $(this).height();
 				$(this).css({top:((wdHeight)-(navHeight))/2});
@@ -253,7 +279,9 @@ $(function(){
 			}
 		});
 
-		// ScrollUpEvent スクロールアップ時の処理。
+		/**************************************************
+		   Scroll Up Event
+		**************************************************/
 		function motionUp(){
 			var stageHeightU = setBase.height(),
 			contTopUp = parseInt(setWrap.css('top')),
@@ -262,18 +290,23 @@ $(function(){
 			if(!(contTopUp === 0)){
 				setWrap.stop().animate({top:moveTopUp},scrollSpeed,scrollEasing);
 				// cIndex定義。liのindex番号のうち、現在選択中のliのindex番号を取得。
-				var cIndex = setNav.find('li.activeStage').index('section#menuWrap li'),
-						// pIndexの定義。現在選択中のliより１つ前のliのこと。
+				var cIndex = setNav.find('li.activeStage').index('section.menuWrap li'),
 						pIndex = cIndex - 1;
-				// 現在選択中のliの中にあるa要素のtext要素をカタカナから英語に戻す。
-				setNav.find('li.activeStage a').text(menuList[cIndex]);
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					// 現在選択中のliの中にあるa要素のtext要素をカタカナから英語に戻す。
+					setNav.find('li.activeStage a').text(menuList[cIndex]);
+				}
 				setNav.find('li.activeStage').removeClass('activeStage');
-				// スクロールした後に選択されるliにactiveStageクラスをつけてあげる。
-				$('section#menuWrap li').eq(pIndex).addClass('activeStage');
-				// プラグインを使って、選択されたliのtextをカタカナに書き換える。
-				$('.activeStage a').shuffleLetters({
-					"text" : menuListActive[pIndex]
-				});
+				$('section.menuWrap li').eq(pIndex).addClass('activeStage');
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					// プラグインを使って、選択されたliのtextをカタカナに書き換える。
+					$('.activeStage a').shuffleLetters({
+						"text" : menuListActive[pIndex]
+					});
+				}
+
 				// parseIntを使ってbodyからdata-pageの属性値を取得し数字に変換。現在のページ番号を取得している。
 				var acvStageP = parseInt($('body').attr('data-page')),
 				// ここではスクロールアップで１つ前のページに移動するためー１してあげる。
@@ -282,30 +315,35 @@ $(function(){
 
 				switch (setPrev !== 2){
 				case true:
-					$('#stage2').css('background-image', 'none');
+					$('.stage2').css('background-image', 'none');
 					break;
 				}
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					// ページ番号によっては処理を行う。
+					if (setPrev == 2) {
+						navList.addClass('color_change');
+					} else if (setPrev == 4) {
+						navList.addClass('color_change');
+					} else if (setPrev == 8) {
+						navList.addClass('color_change');
+					} else {
+						navList.removeClass('color_change');
+					}
+					if(downBtn == 'show'){
+						pagePos();
+					}
+				}
 
-				// ページ番号によっては処理を行う。
-				if (setPrev == 2) {
-					navList.addClass('color_change');
-				} else if (setPrev == 4) {
-					navList.addClass('color_change');
-				} else if (setPrev == 8) {
-					navList.addClass('color_change');
-				} else {
-					navList.removeClass('color_change');
-				}
-				if(downBtn == 'show'){
-					pagePos();
-				}
 			}
 			if(urlHash == 'on'){
 				replaceHash();
 			}
 		}
 
-		// ScrollDownEvent
+		/**************************************************
+		   Scroll Down Event
+		**************************************************/
 		function motionDown(){
 			var stageHeightD = setBase.height(),
 			contTopDown = parseInt(setWrap.css('top')),
@@ -317,14 +355,20 @@ $(function(){
 
 			if(!(contTopDown == maxHeightAdj)){
 				setWrap.stop().animate({top:moveTopDown},scrollSpeed,scrollEasing);
-				var cIndex = setNav.find('li.activeStage').index('section#menuWrap li'),
+				var cIndex = setNav.find('li.activeStage').index('section.menuWrap li'),
 						nIndex = cIndex + 1;
-				setNav.find('li.activeStage a').text(menuList[cIndex]);
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					setNav.find('li.activeStage a').text(menuList[cIndex]);
+				}
 				setNav.find('li.activeStage').removeClass('activeStage');
-				$('section#menuWrap li').eq(nIndex).addClass('activeStage');
-				$('.activeStage a').shuffleLetters({
-					"text" : menuListActive[nIndex]
-				});
+				$('section.menuWrap li').eq(nIndex).addClass('activeStage');
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					$('.activeStage a').shuffleLetters({
+						"text" : menuListActive[nIndex]
+					});
+				}
 
 				var acvStageN = parseInt($('body').attr('data-page')),
 				setNext = acvStageN+1;
@@ -333,19 +377,22 @@ $(function(){
 
 				switch (setNext !== 2){
 				case true:
-					$('#stage2').css('background-image', 'none');
+					$('.stage2').css('background-image', 'none');
 					break;
 				}
-
-				if (setNext == 2) {
-					navList.addClass('color_change');
-				} else if (setNext == 4) {
-					navList.addClass('color_change');
-				} else if (setNext == 8) {
-					navList.addClass('color_change');
-				}  else {
-					navList.removeClass('color_change');
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					if (setNext == 2) {
+						navList.addClass('color_change');
+					} else if (setNext == 4) {
+						navList.addClass('color_change');
+					} else if (setNext == 8) {
+						navList.addClass('color_change');
+					}  else {
+						navList.removeClass('color_change');
+					}
 				}
+
 				if(downBtn == 'show'){
 					pagePos();
 				}
@@ -355,29 +402,40 @@ $(function(){
 			}
 		}
 
-		// SideNaviClick
+		/**************************************************
+		   Side Navi Click
+		**************************************************/
 		navList.click(function(){
 			if(!(setWrap.is(':animated'))){
 				var crtIndex = navList.index(this),
 				cliIndex = crtIndex + 1,
 				crtHeight = $(window).height();
 				setWrap.stop().animate({top:-(crtHeight*crtIndex)},scrollSpeed,scrollEasing);
-				var cIndex = setNav.find('li.activeStage').index('section#menuWrap li');
-				setNav.find('li.activeStage a').text(menuList[cIndex]);
+				var cIndex = setNav.find('li.activeStage').index('section.menuWrap li');
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					setNav.find('li.activeStage a').text(menuList[cIndex]);
+				}
 				setNav.find('li.activeStage').removeClass('activeStage');
 				$(this).addClass('activeStage');
-				$('.activeStage a').shuffleLetters({
-					"text" : menuListActive[crtIndex]
-				});
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					$('.activeStage a').shuffleLetters({
+						"text" : menuListActive[crtIndex]
+					});
+				}
 				$('body').attr('data-page',crtIndex+1);
-				if (cliIndex == 2) {
-					navList.addClass('color_change');
-				} else if (cliIndex == 4) {
-					navList.addClass('color_change');
-				} else if (cliIndex == 8) {
-					navList.addClass('color_change');
-				} else {
-					navList.removeClass('color_change');
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					if (cliIndex == 2) {
+						navList.addClass('color_change');
+					} else if (cliIndex == 4) {
+						navList.addClass('color_change');
+					} else if (cliIndex == 8) {
+						navList.addClass('color_change');
+					} else {
+						navList.removeClass('color_change');
+					}
 				}
 				if(downBtn == 'show'){
 					pagePos();
@@ -397,7 +455,7 @@ $(function(){
 					setNav = navIndex+1;
 					if(!(setNav == navLength)){
 						$(this).next().click();
-						$('#stage2').css({'background-image': 'none'});
+						$('.stage2').css({'background-image': 'none'});
 					}
 				});
 				if(urlHash == 'on'){
@@ -434,14 +492,18 @@ $(function(){
 		// OpeningFade
 		$('body').css({visibility:'visible',opacity:'0'}).animate({opacity:'1'},1000);
 
-		// LoadPageMove リロードボタンを押した時の処理
+		/**************************************************
+			 Load Page Move リロードボタンを押した時の処理
+		**************************************************/
 		if(url.indexOf(setHash) !== -1){
 			var numSplit = ((url.split(setHash)[1])-1);
 				navList.eq(numSplit).click();
 		}
-	});
+	});	/* $(window).load(function() end!!! */
 
-	// HashChangeEvent URLのハッシュ番号を手打ちで入力した時に起こる処理
+	/**************************************************
+		 Hash Change Event URLのハッシュ番号を手打ちで入力した時に起こる処理
+	**************************************************/
 	if(urlHash == 'on'){
 		$(window).on('hashchange',function(){
 			var stateUrl = document.URL,
@@ -450,24 +512,23 @@ $(function(){
 		});
 	}
 
-	// 2ページ目の処理
+	/**************************************************
+		 2ページ目の処理
+	**************************************************/
 	var artist_img = [
-		'url(img/S__144449578.jpg)',
-		'url(img/S__144449577.jpg)',
-		'url(img/S__144449578.jpg)',
-		'url(img/S__144449577.jpg)',
-		'url(img/S__144449578.jpg)',
-		'url(img/S__144449577.jpg)',
-		'url(img/S__144449578.jpg)',
-		'url(img/S__144449577.jpg)',
-		'url(img/S__144449578.jpg)'
+		'url(img/sampleBg.jpg)',
+		'url(img/sampleBg01.jpg)',
+		'url(img/sampleBg02.jpg)',
+		'url(img/sampleBg03.jpg)',
+		'url(img/sampleBg04.jpg)',
+		'url(img/sampleBg05.jpg)',
+		'url(img/sampleBg06.jpg)',
+		'url(img/sampleBg07.jpg)',
+		'url(img/sampleBg08.jpg)'
 	];
-	var profile_img = [
-		'<img src="img/sampleBg.jpg" alt="">',
-	];
+
 	artists_box = $('.artists_box'),
 	artists_box_li = artists_box.find('li');
-
 	artists_box_li.mouseover(function(){
 		$(this).removeClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '0');
@@ -475,28 +536,78 @@ $(function(){
 		for (var i = 0; i < 9; i++) {
 			switch (item){
 			case i:
-<<<<<<< HEAD
-				$('#stage2').css({'background-image':artist_img[item]});
-=======
-				$('#stage2').css({'background-image':artist_img[item],
+				$('.stage2').css({'background-image':artist_img[item],
 
 												});
->>>>>>> e653ef417ef6b73385ecac3adb64a34f0ffd3a24
 				break;
 			}
 		}
 		$(this).on('click', function(){
-			$('.artists_detail').show();
-			$('.menu_trigger').on('click', function (){
-			$('.artists_detail').fadeOut();
-			});
-			$('.image').on('click', function (){
-				$('.image').addClass('rotation');
-			});
+			$('.artists_detail').fadeIn(1000);
 		});
 	}).mouseout(function(){
 		$(this).addClass('artists_hidden');
 		$('.artists_hidden').css('opacity', '1');
+			$('.stage2').css({
+		});
+	});
+
+	/**************************************************
+		 slider pulguin option
+	**************************************************/
+	$(".slider01").slick({
+		arrows: false,
+		infinite: true,
+		slidesToShow: 1, // 表示させるスライド数
+		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		speed: 1900, // スライド/フェードさせるスピード（ミリ秒）
+		autoplay: true, // 自動再生で切り替えする時間(ミリ秒)
+		autoplaySpeed: 1600,
+		pauseOnHover: false,　// autoplay:trueのとき、マウスホバーしたら一時停止させるか
+		pauseOnFocus: false,　// autoplay:trueのとき、マウスフォーカスしたら一時停止させるか
+		swipe: false, // スワイプを検知するか
+		touchMove: false, // タッチでスライドさせるか
+		rtl: true // スライドの順番を逆にするか　htmlにdir="rtl"を指定
+	});
+	$(".slider02").slick({
+		arrows: false,
+		infinite: true,
+		slidesToShow: 1,
+		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		speed: 2300,
+		autoplay: true,
+		autoplaySpeed: 1300,
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		swipe: false,
+		touchMove: false
+	});
+	$(".slider03").slick({
+		arrows: false,
+		infinite: true,
+		slidesToShow: 1,
+		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		speed: 1800,
+		autoplay: true,
+		autoplaySpeed: 2600,
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		swipe: false,
+		touchMove: false,
+		rtl: true
+	});
+	$(".slider04").slick({
+		arrows: false,
+		infinite: true,
+		slidesToShow: 1,
+		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		speed: 2700,
+		autoplay: true,
+		autoplaySpeed: 1900,
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		swipe: false,
+		touchMove: false
 	});
 
 
