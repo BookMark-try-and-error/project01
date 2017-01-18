@@ -39,14 +39,36 @@ $(function(){
 	];
 
 	//ユーザーエージェント切り替え実装前のテスト用の変数
-	var uA = '',
-			uA = 'pc';
-			//uA = 'tb';
-			//uA = 'sp';
+	// var uA = '',
+	// 		//uA = 'pc';
+	// 		//uA = 'tb';
+	// 		uA = 'sp';
+
+
 
 	var url = document.URL,
 	stageSlide = $('.stageSlide');
+	/**************************************************
+	   画面サイズ
+	**************************************************/
+	var ua = navigator.userAgent,
+	root = $('body');
 
+	if (ua.indexOf('iPhone') > 0 ||
+		ua.indexOf('Android') > 0 ||
+		ua.indexOf('BlackBerry') > 0 ||
+		ua.indexOf('windows Phone') > 0) {
+		var uA = 'sp';
+		root.addClass('spUser00');
+	} else if (ua.indexOf('iPad') > 0) {
+		var uA = 'tb';
+		root.addClass('tbUser00');
+	} else if (ua.indexOf('mac') > 0 || ua.indexOf('windows') > 0) {
+		var uA = 'pc';
+		root.addClass('pcUser00');
+	}
+	var uA = 'pc';
+	console.log(ua);
 	/**************************************************
 	   固定メニュー
 	**************************************************/

@@ -1,12 +1,9 @@
-.pcUser {
-  //display: none;
-}
 .tbUser {
-  display: none;
-}
+  display: none; }
+
 .spUser {
-  display: none;
-}
+  display: none; }
+
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -35,77 +32,64 @@ time, mark, audio, video {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
-}
+  background: transparent; }
 
 body {
   font-size: 100%;
-	line-height: 160%;
-	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
-	color: #000;
-	text-align: center;
-	background: #fff;
-	position: relative;
-	overflow: hidden;
-	visibility: hidden;
-  line-height: 1;
-}
+  line-height: 160%;
+  color: #000;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  line-height: 1; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 nav ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 a {
   margin: 0;
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
-}
+  background: transparent; }
 
 /* change colours to suit your needs */
 ins {
   background-color: #ff9;
   color: #000;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 /* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
   font-style: italic;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 del {
-  text-decoration: line-through;
-}
+  text-decoration: line-through; }
 
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
-  cursor: help;
-}
+  cursor: help; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /* change border colour to suit your needs */
 hr {
@@ -114,32 +98,28 @@ hr {
   border: 0;
   border-top: 1px solid #cccccc;
   margin: 1em 0;
-  padding: 0;
-}
+  padding: 0; }
 
 input, select {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .clearfix:after {
   content: " ";
   display: block;
   height: 0;
   clear: both;
-  visibility: hidden;
-}
+  visibility: hidden; }
+
 /***********************************
 * reset end *
 ***********************************/
-
 /***********************************
 * variable & function *
 ***********************************/
@@ -148,559 +128,481 @@ input, select {
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
-  transition: 0.5s;
-}
+  transition: 0.5s; }
+
 /***********************************
 * variable & function end *
 ***********************************/
-
 /* =======================================
 
-	ここからプラグインのCSSを流用
+
 
 ======================================= */
-a:link { text-decoration:none; color: #000;}
-a:visited { text-decoration:none; color: #000;}
-a:active { text-decoration:none; color: #000;}
-a:hover { text-decoration:none; color: #000;}
+a:link {
+  text-decoration: none;
+  color: #000; }
+
+a:visited {
+  text-decoration: none;
+  color: #000; }
+
+a:active {
+  text-decoration: none;
+  color: #000; }
+
+a:hover {
+  text-decoration: none;
+  color: #000; }
 
 h2 {
-	width: 40vw;
-	font-size: 4vw;
-}
+  width: 40vw;
+  font-size: 4vw; }
 
 /* .container
 --------------------------- */
 .container {
-	top: 0;
-	left: 0;
-	width: 100%;
-	position: absolute;
-	z-index: 1;
-}
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1; }
 
 /* .stageBase
 --------------------------- */
 .stageBase {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-}
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+
 .stageBase .fieldWrap {
-	padding: 100px 0 0 0;
-	text-align: center;
-}
+  padding: 100px 0 0 0;
+  text-align: center; }
+
 .stage2 {
   background-color: #fff;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
-  transition: 1.5s;
-}
-/* 各ページ部分的に共通
---------------------------- */
-.pcUser .section_title { /* <h2>のこと */
-  color: #ff4500;
-  font-size: 3.5vw;
-}
+  transition: 1.5s; }
 
-/* １ページ
---------------------------- */
+/*
+/***********************************
+* pcUser *
+***********************************/
+.pcUser {
+  /* fixed menu start*/
+  /* fixed menu end*/
+  /* 2 page start*/
+  /* 2 page end*/
+  /* 6 page start*/
+  /* 6 page end*/
+  /* 7 page start*/
+  /* 7 page end*/
+  /* 8 page start*/
+  /* 8 page end*/ }
+  .pcUser .section_title {
+    color: #ff4500;
+    font-size: 3.5vw; }
+  .pcUser .containerMenu {
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+    z-index: 10; }
+    .pcUser .containerMenu #pageNavLeft {
+      float: left;
+      width: 14vw;
+      text-align: center; }
+    .pcUser .containerMenu #pageNavRight {
+      float: right;
+      width: 14vw;
+      text-align: center; }
+    .pcUser .containerMenu .pageNav ul {
+      width: 14vw;
+      display: block; }
+      .pcUser .containerMenu .pageNav ul li {
+        position: relative;
+        margin-top: 16vh;
+        width: 14vw;
+        height: 15px;
+        display: block;
+        overflow: hidden; }
+        .pcUser .containerMenu .pageNav ul li .li_right {
+          float: right;
+          width: 7vw;
+          height: 15px;
+          display: block;
+          position: relative; }
+        .pcUser .containerMenu .pageNav ul li .li_left {
+          float: left;
+          width: 7vw;
+          height: 15px;
+          display: block;
+          position: relative; }
+        .pcUser .containerMenu .pageNav ul li .bor_left, .pcUser .containerMenu .pageNav ul li .bor_right {
+          display: inline-block;
+          width: 5vw;
+          height: 1px;
+          margin: 7px 0;
+          background: #333;
+          transition: 1s;
+          position: absolute; }
+        .pcUser .containerMenu .pageNav ul li .bor_left {
+          right: 0; }
+        .pcUser .containerMenu .pageNav ul li .bor_right {
+          left: 0; }
+        .pcUser .containerMenu .pageNav ul li span {
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          width: 0vw;
+          height: 15px;
+          display: inline-block;
+          transition: 1s; }
+        .pcUser .containerMenu .pageNav ul li a {
+          width: 7vw;
+          height: 15px;
+          font-size: 1vw;
+          line-height: 15px;
+          overflow: hidden;
+          display: block;
+          transition: 1s; }
+        .pcUser .containerMenu .pageNav ul li .left_slide {
+          left: 0; }
+        .pcUser .containerMenu .pageNav ul li .right_slide {
+          right: 0; }
+      .pcUser .containerMenu .pageNav ul .color_change .bor_left, .pcUser .containerMenu .pageNav ul .color_change .bor_right {
+        background: #fff; }
+      .pcUser .containerMenu .pageNav ul .color_change a {
+        color: #fff; }
+      .pcUser .containerMenu .pageNav ul .activeStage .bor_left, .pcUser .containerMenu .pageNav ul .activeStage .bor_right {
+        width: 0; }
+      .pcUser .containerMenu .pageNav ul .activeStage a {
+        color: #fff; }
+      .pcUser .containerMenu .pageNav ul .activeStage span {
+        width: 7vw;
+        background: #333; }
+      .pcUser .containerMenu .pageNav ul .activeStage .color_change a {
+        color: #333; }
+      .pcUser .containerMenu .pageNav ul .activeStage .color_change span {
+        width: 7vw;
+        background: #fff; }
+  .pcUser .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.6); }
+    .pcUser .overlay .artists_box {
+      width: 80vw;
+      height: 80vh;
+      position: absolute;
+      top: 10vh;
+      left: 10vw;
+      z-index: 15;
+      /*background: rgba(255,255,255,0.2);*/ }
+      .pcUser .overlay .artists_box ul {
+        width: 80vw;
+        height: 20vh;
+        margin-top: 5vh;
+        overflow: hidden; }
+        .pcUser .overlay .artists_box ul li {
+          float: left;
+          margin-left: 5vw;
+          width: 20vw;
+          height: 10vh;
+          transition: 0.7s;
+          /*.artists_box img {
+            width: 20vw;
+            height: 10vh;
+          }*/ }
+    .pcUser .overlay .artists_detail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: none;
+      width: 70%;
+      height: 50%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9); }
+  .pcUser .contain_wrap06 {
+    width: 64vw;
+    height: 100vh;
+    margin-left: 18vw;
+    background: rgba(0, 0, 0, 0.1); }
+    .pcUser .contain_wrap06 h2 {
+      text-align: left;
+      margin: 5vh 0 0 1vw; }
+  .pcUser .contain_wrap07 {
+    width: 64vw;
+    height: 100vh;
+    margin-left: 18vw;
+    background: rgba(0, 0, 0, 0.1); }
+    .pcUser .contain_wrap07 h2 {
+      text-align: left;
+      margin: 5vh 0 0 1vw; }
+  .pcUser .stage8 {
+    background: #333;
+    color: #fff; }
+    .pcUser .stage8 .contain_wrap08 {
+      width: 64vw;
+      height: 100vh;
+      margin-left: 18vw; }
+      .pcUser .stage8 .contain_wrap08 h2, .pcUser .stage8 .contain_wrap08 .ticket_title {
+        text-align: left; }
+      .pcUser .stage8 .contain_wrap08 .price, .pcUser .stage8 .contain_wrap08 .guide_str {
+        text-align: right; }
+      .pcUser .stage8 .contain_wrap08 .title08 {
+        margin: 8vh 0 0 1vw;
+        padding-bottom: 3vh; }
+      .pcUser .stage8 .contain_wrap08 .ticket_title {
+        font-size: 2vw;
+        margin-top: 5vh; }
+      .pcUser .stage8 .contain_wrap08 .price {
+        font-size: 2vw;
+        margin: 2vh 4vw 0 0; }
+      .pcUser .stage8 .contain_wrap08 .notice_str {
+        font-size: 1.5vw;
+        margin-top: 4vh; }
+      .pcUser .stage8 .contain_wrap08 .entry {
+        margin: 4vh 0 0 1vw;
+        font-size: 6vw; }
 
-/* ２ページ
---------------------------- */
-.overlay {
-	width: 100%;
-	height:100%;
-	//position: fixed;
-	top: 0;
-	z-index: 5;
-	background: rgba(0,0,0,0.6);
-}
-.artists_box {
-	width: 80vw;
-	height: 80vh;
-	position: absolute;
-	top: 10vh;
-	left: 10vw;
-	z-index: 15;
-	/*background: rgba(255,255,255,0.2);*/
-}
-.artists_detail {
-  position: absolute;
-	top: 0;
-	left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-	display: none;
-	width: 70%;
-	height: 50%;
-	z-index: 100;
-	background: rgba(255,255,255,0.9);
-}
-.artists_box ul {
-	width: 80vw;
-	height: 20vh;
-	margin-top: 5vh;
-  overflow: hidden;
-}
-.artists_box ul li {
-	float: left;
-	margin-left: 5vw;
-	width: 20vw;
-	height: 10vh;
-  transition: 0.7s;
-}
-/* コメントアウトを外すと画像サイズをビューポート指定 */
-/*.artists_box img {
-  width: 20vw;
-  height: 10vh;
-}*/
-/* ３ページ
---------------------------- */
-
-/* ４ページ
---------------------------- */
-
-/* ５ページ
---------------------------- */
-
-/* ６ページ
---------------------------- */
-.contain_wrap06 {
-  width: 64vw;
-  height: 100vh;
-  margin-left: 18vw;
-  background: rgba(0, 0, 0, 0.1);
-}
-.contain_wrap06 h2 {
-  text-align: left;
-  margin: 5vh 0 0 1vw;
-}
-/* ７ページ
---------------------------- */
-.contain_wrap07 {
-  width: 64vw;
-  height: 100vh;
-  margin-left: 18vw;
-  background: rgba(0, 0, 0, 0.1);
-}
-.contain_wrap07 h2 {
-  text-align: left;
-  margin: 5vh 0 0 1vw;
-}
-
-/* ８ページ
---------------------------- */
-.stage8 {
-  background: #333;
-  color: #fff;
-}
-.contain_wrap08 h2, .ticket_title {
-  text-align: left;
-}
-.price, .guide_str {
-  text-align: right;
-}
-.contain_wrap08 {
-  width: 64vw;
-  height: 100vh;
-  margin-left: 18vw;
-}
-.title08 {
-  margin: 8vh 0 0 1vw;
-  padding-bottom: 3vh;
-}
-.ticket_title {
-  font-size: 2vw;
-  margin-top: 5vh;
-}
-.price {
-  font-size: 2vw;
-  margin: 2vh 4vw 0 0;
-}
-.notice_str {
-  font-size: 1.5vw;
-  margin-top: 4vh;
-}
-.entry {
-  margin: 4vh 0 0 1vw;
-  font-size: 6vw;
-}
-/* #pageNav 固定メニュー
---------------------------- */
-.pcUser .containerMenu {
-	top: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.1);
-	width: 100vw;
-	height: 90vh;
-	position: fixed;
-	z-index: 10;
-}
-#pageNavLeft {
-	float: left;
-	width: 14vw;
-	text-align: center;
-}
-#pageNavRight {
-	float: right;
-	width: 14vw;
-	text-align: center;
-}
-.pageNav ul {
-	width: 14vw;
-	display: block;
-}
-.pageNav ul li {
-	position: relative;
-	margin-top: 16vh;
-	width: 14vw;
-	height: 15px;
-	display: block;
-	overflow: hidden;
-}
-.li_right {
-	float: right;
-	width: 7vw;
-	height: 15px;
-	display: block;
-	//overflow: hidden;
-	position: relative;
-}
-.li_left {
-	float: left;
-	width: 7vw;
-	height: 15px;
-	display: block;
-	//overflow: hidden;
-	position: relative;
-}
-.bor_left, .bor_right {
-	display: inline-block;
-	width: 5vw;
-	height: 1px;
-	margin: 7px 0;
-	background: #333;
-	transition: 1s;
-	position: absolute;
-}
-.bor_left {
-	right: 0;
-}
-.bor_right {
-	left: 0;
-}
-.pageNav ul li.color_change .bor_left, .pageNav ul li.color_change .bor_right {
-	background: #fff;
-}
-.pageNav ul li.activeStage .bor_left {
-	width: 0;
-}
-.pageNav ul li.activeStage .bor_right {
-	width: 0;
-
-}
-.pageNav ul li a {
-	width: 7vw;
-	height: 15px;
-  font-size: 1vw;
-	line-height: 15px;
-  overflow: hidden;
-	display: block;
-	transition: 1s;
-}
-.pageNav ul li.color_change a {
-	color: #fff;
-}
-.pageNav ul li.activeStage a {
-	color: #fff;
-}
-.pageNav ul li.activeStage.color_change a {
-	color: #333;
-}
-.pageNav ul li span {
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	width: 0vw;
-	height: 15px;
-	display: inline-block;
-	transition: 1s;
-}
-.left_slide {
-	left: 0;
-}
-.right_slide {
-	right: 0;
-}
-.pageNav ul li.activeStage span {
-	width: 7vw;
-	background: #333;
-}
-.pageNav ul li.activeStage.color_change span {
-	width: 7vw;
-	background: #fff;
-}
-
-
-/* スマートフォン */
-.spUser .containerMenu {
-	top: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.5);
-	width: 50vw;
-	height: 100vh;
-	position: fixed;
-	z-index: 10;
-  text-align: center;
-}
-.spUser .pageNav ul {
-  display: inline-block;
-}
-.spUser .pageNav ul li {
-	text-align: center;
-  display: inline-block;
-  margin-top: 7vh;
-}
-.spUser .pageNav ul a {
-	width: 7vw;
-  display: inline-block;
-  color: #fff;
-}
+/***********************************
+* tbUser *
+***********************************/
+/***********************************
+* spUser *
+***********************************/
+.spUser {
+  /* fixed menu start */ }
+  .spUser .containerMenu {
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    text-align: center; }
+    .spUser .containerMenu .pageNav ul {
+      display: block; }
+      .spUser .containerMenu .pageNav ul li {
+        text-align: center;
+        height: 15px;
+        display: block;
+        margin-top: 7vh; }
+      .spUser .containerMenu .pageNav ul a {
+        width: 15vw;
+        height: 15px;
+        display: inline-block;
+        color: #fff; }
 
 /* #pageDown
 --------------------------- */
 #pageDown {
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 40px;
-	text-align: center;
-	position: fixed;
-	overflow: hidden;
-	z-index: 3;
-}
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  overflow: hidden;
+  z-index: 3; }
+
 #pageDown a {
-	margin: 0 auto;
-	width: 30px;
-	height: 30px;
-	background: transparent url(../img/next_arw.png) no-repeat center center;
-	display: block;
-}
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  background: transparent url(../img/next_arw.png) no-repeat center center;
+  display: block; }
 
 /***********************************
 * plugin slider css don't touch!!!!! *
 ***********************************/
-.slick-slider
-{
+.slick-slider {
   position: relative;
-
   display: block;
   box-sizing: border-box;
-
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -ms-touch-action: pan-y;
-      touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
 
-.slick-list
-{
+.slick-list {
   position: relative;
-
   display: block;
   overflow: hidden;
-
   margin: 0;
-  padding: 0;
-}
-.slick-list:focus
-{
-  outline: none;
-}
-.slick-list.dragging
-{
+  padding: 0; }
+
+.slick-list:focus {
+  outline: none; }
+
+.slick-list.dragging {
   cursor: pointer;
-  cursor: hand;
-}
+  cursor: hand; }
 
 .slick-slider .slick-track,
-.slick-slider .slick-list
-{
+.slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-       -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
-.slick-track
-{
+.slick-track {
   position: relative;
   top: 0;
   left: 0;
+  display: block; }
 
-  display: block;
-}
 .slick-track:before,
-.slick-track:after
-{
+.slick-track:after {
   display: table;
+  content: ''; }
 
-  content: '';
-}
-.slick-track:after
-{
-  clear: both;
-}
-.slick-loading .slick-track
-{
-  visibility: hidden;
-}
+.slick-track:after {
+  clear: both; }
 
-.slick-slide
-{
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
   display: none;
   float: left;
   height: 100%;
-  min-height: 1px;
-}
-[dir='rtl'] .slick-slide
-{
-  float: right;
-}
-.slick-slide img
-{
-  display: block;
-}
-.slick-slide.slick-loading img
-{
-  display: none;
-}
-.slick-slide.dragging img
-{
-  pointer-events: none;
-}
-.slick-initialized .slick-slide
-{
-  display: block;
-}
-.slick-loading .slick-slide
-{
-  visibility: hidden;
-}
-.slick-vertical .slick-slide
-{
+  min-height: 1px; }
+
+[dir='rtl'] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
   display: block;
   height: auto;
-  border: 1px solid transparent;
-}
+  border: 1px solid transparent; }
+
 .slick-arrow.slick-hidden {
-  display: none;
-}
+  display: none; }
+
 /***********************************
 * plugin slider css don't touch!!!!! end *
 ***********************************/
-
-/* plugin slider css touch me ok!!! *
-************************************/
+/***********************************
+* plugin slider css touch me ok!!! *
+***********************************/
 .slider {
-    width: 40vw;
-    height: 20vh;
-    overflow: hidden;
-    margin: 0 auto;
-}
+  width: 40vw;
+  height: 20vh;
+  overflow: hidden;
+  margin: 0 auto; }
+
 .slider img {
   width: 30vw;
-  height: 20vh;
-  //overflow: hidden;
-}
+  height: 20vh; }
 
-.slick-slide { /* スライド間の隙間 */
-  margin: 0;
-}
+.slick-slide {
+  /*  */
+  margin: 0; }
 
 .slick-slide img {
-  width: 100%;
-}
+  width: 100%; }
 
 .slick-prev:before,
 .slick-next:before {
-    color: black;
-}
-/* plugin slider css touch me!!! end *
-************************************/
-/* 今回使う可能性が低いためコメントアウトしておきます。
+  color: black; }
+
+/***********************************
+* plugin slider css touch me ok end!!! *
+***********************************/
+/*
 .stageSlide
 --------------------------- */
 /*.stageSlide {
-	position: relative;
-	overflow: hidden;
-	visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
 }
 .stageSlide .slideWrap {
-	top: 0;
-	left: 0;
-	position: absolute;
-	overflow: hidden;
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
 }
 .stageSlide .slideWrap:before,
 .stageSlide .slideWrap:after {
-	content: " ";
-	display: table;
+  content: " ";
+  display: table;
 }
 .stageSlide .slideWrap:after {clear: both;}
 .stageSlide .slideWrap {*zoom: 1;}
 
 .stageSlide .slidePanel {
-	float: left;
-	overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .stageSlide .sdPrev,
 .stageSlide .sdNext {
-	margin-top: -25px;
-	top: 50%;
-	width: 50px;
-	height: 50px;
-	display: block;
-	position: absolute;
-	z-index: 99;
+  margin-top: -25px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  z-index: 99;
 }
 .stageSlide .sdPrev {
-	left: 80px;
-	background: transparent url(../img/slide_prev.png) no-repeat left top;
+  left: 80px;
+  background: transparent url(../img/slide_prev.png) no-repeat left top;
 }
 .stageSlide .sdNext {
-	right: 80px;
-	background: transparent url(../img/slide_next.png) no-repeat left top;
+  right: 80px;
+  background: transparent url(../img/slide_next.png) no-repeat left top;
 }
 
 .stageSlide .slideNav {
-	bottom: 70px;
-	left: 0;
-	width: 100%;
-	height: 15px;
-	text-align: center;
-	position: absolute;
-	z-index: 98;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  text-align: center;
+  position: absolute;
+  z-index: 98;
 }
 .stageSlide .slideNav a {
-	margin: 0 5px;
-	width: 15px;
-	height: 15px;
-	background: transparent url(../img/nav.png) no-repeat center center;
-	display: inline-block;
-	overflow: hidden;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  background: transparent url(../img/nav.png) no-repeat center center;
+  display: inline-block;
+  overflow: hidden;
 }
 .stageSlide .slideNav a.pnActive {
-	background: transparent url(../img/nav_acv.png) no-repeat center center;
+  background: transparent url(../img/nav_acv.png) no-repeat center center;
 }*/
