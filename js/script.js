@@ -32,7 +32,7 @@ $(function(){
 		'トークショウ',
 		'ライヴ',
 		// 右メニュー
-		'ディージェー',
+		'ディスクジョッキー',
 		'タイムテーブル',
 		'スポンサー',
 		'コンタクト'
@@ -51,24 +51,24 @@ $(function(){
 	/**************************************************
 	   画面サイズ
 	**************************************************/
-	var ua = navigator.userAgent,
+	var userAgent = navigator.userAgent,
 	root = $('body');
 
-	if (ua.indexOf('iPhone') > 0 ||
-		ua.indexOf('Android') > 0 ||
-		ua.indexOf('BlackBerry') > 0 ||
-		ua.indexOf('windows Phone') > 0) {
-		var uA = 'sp';
-		root.addClass('spUser00');
-	} else if (ua.indexOf('iPad') > 0) {
-		var uA = 'tb';
-		root.addClass('tbUser00');
-	} else if (ua.indexOf('mac') > 0 || ua.indexOf('windows') > 0) {
-		var uA = 'pc';
-		root.addClass('pcUser00');
-	}
-	var uA = 'pc';
-	console.log(ua);
+		if (userAgent.indexOf('iPhone') > 0 ||
+			userAgent.indexOf('Android') > 0 ||
+			userAgent.indexOf('BlackBerry') > 0 ||
+			userAgent.indexOf('windows Phone') > 0) {
+			var uA = 'sp';
+			$('.spUser').css('display', 'block');
+		} else if (userAgent.indexOf('iPad') > 0) {
+			var uA = 'tb';
+			$('.tbUser').css('display', 'block');
+		} else if (userAgent.indexOf('Mac') > 0 || ua.indexOf('windows') > 0) {
+			var uA = 'pc';
+			$('.pcUser').css('display', 'block');
+		}
+
+	console.log(userAgent);
 	/**************************************************
 	   固定メニュー
 	**************************************************/
