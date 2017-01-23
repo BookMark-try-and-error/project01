@@ -95,6 +95,13 @@ $(function(){
 		});
 	} // if (uA == 'pc') end
 
+	/******SPの処理*****/
+	$('.hamMenu').on('click', function(){
+		$('.containerMenu').toggleClass('on');
+	});
+
+
+
 	if(downBtn == 'show'){
 		setWrap.append('<div id="pageDown"><a href="javascript:void(0);"></a></div>');
 	}

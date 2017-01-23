@@ -1,5 +1,5 @@
 .pcUser {
-  //display: none;
+  display: none;
 }
 .tbUser {
   display: none;
@@ -153,11 +153,6 @@ input, select {
 * variable & function end *
 ***********************************/
 
-/* =======================================
-
-
-
-======================================= */
 a:link { text-decoration:none; color: #000;}
 a:visited { text-decoration:none; color: #000;}
 a:active { text-decoration:none; color: #000;}
@@ -178,8 +173,9 @@ h2 {
   z-index: 1;
 }
 
-/* .stageBase
---------------------------- */
+/***********************************
+* common *
+***********************************/
 .stageBase {
   width: 100%;
   position: relative;
@@ -453,35 +449,124 @@ h2 {
 * spUser *
 ***********************************/
 .spUser {
+	max-width: 768px;
+	background-image: url("../img/backimg_sp.jpg");
+	position: relative; // important
+	margin: 0 auto;
+	/* common start */
+	.stageBase {
+		max-width: 768px;
+	  position: relative;
+	  overflow: hidden;
+		width: 100vw;
+		margin: 0 auto;
+		background: rgba(0,0,0,0);
+
+		.section_title {
+			color: red;
+			margin: 0 auto;
+		}
+		.hamMenu {
+			width: 40px;
+			height: 5vh;
+			background-color: #fff;
+			position: absolute;
+			top: 10px;
+			right: 0;
+			z-index: 20;
+
+			span {
+				width: 40px;
+				height: 5px;
+				display: block;
+				background-color: #000;
+				margin-bottom: 5px;
+
+			}
+		}
+	}
+	/* common end */
+
 	/* fixed menu start */
 	.containerMenu {
-	  top: 0;
-	  right: 0;
-	  background: rgba(0, 0, 0, 0.5);
-	  width: 50vw;
-	  height: 100vh;
-	  position: fixed;
-	  z-index: 10;
-	  text-align: center;
+		max-width: 768px;
+		position: relative;
+		display: none;
 
-	  .pageNav {
-	  	ul {
-			  display: block;
-			  li {
-				  text-align: center;
-				  height: 15px;
+		.menuWrap {
+			top: 0;
+		  background: rgba(0, 0, 0, 0.5);
+		  width: 50vw;
+		  height: 100vh;
+		  position: fixed;
+		  z-index: 10;
+		  text-align: center;
+			margin-left: 50vw;
+			.pageNav {
+		  	ul {
 				  display: block;
-				  margin-top: 7vh;
+					text-align: center;
+				  li {
+					  text-align: center;
+					  height: 15px;
+					  display: block;
+					  margin-top: 5vh;
+						//width: 15vw;
+						height: 7vh;
+					}
+					a {
+						//font-size: 3.5vw;
+						font-size: calc(50% + 1vw);
+						//font-size: 50%;
+					  width: 30vw;
+					  line-height: 7vh;
+					  display: inline-block;
+					  color: #fff;
+					}
 				}
-				a {
-				  width: 15vw;
-				  height: 15px;
-				  display: inline-block;
-				  color: #fff;
-				}
-			}
-	  } //.pageNav end
+		  } //.pageNav end
+		}
 	} //.containerMenu end
+	.on{
+		display: block;
+	}
+	/* 8 page start*/
+	.stage8 {
+		background: #333;
+		color: #fff;
+
+		.contain_wrap08 {
+			width: 80vw;
+			height: 100vh;
+			margin: 0 auto;
+
+			.ticket_title {
+				text-align: left;
+			}
+			.price, .guide_str {
+				text-align: right;
+			}
+			.ticket_title {
+			  font-size: 2vw;
+			  margin-top: 5vh;
+			}
+			.price {
+			  font-size: 2vw;
+			  margin: 2vh 4vw 0 0;
+			}
+			.notice_str {
+			  font-size: 1.5vw;
+			  margin-top: 4vh;
+			}
+			.entry {
+			  // margin: 4vh 0 0 1vw;
+			  font-size: 6vw;
+				margin: 0 auto;
+			}
+		} // .contain_wrap08 end
+	} // .stage8 end
+	/* 8 page end*/
+
 } //.spUser end
 
 
@@ -631,13 +716,13 @@ h2 {
 * plugin slider css touch me ok!!! *
 ***********************************/
 .slider {
-    width: 40vw;
+    width: 100vw;
     height: 20vh;
     overflow: hidden;
     margin: 0 auto;
 }
 .slider img {
-  width: 30vw;
+  width: 100vw;
   height: 20vh;
   //overflow: hidden;
 }
@@ -657,69 +742,3 @@ h2 {
 /***********************************
 * plugin slider css touch me ok end!!! *
 ***********************************/
-/*
-.stageSlide
---------------------------- */
-/*.stageSlide {
-  position: relative;
-  overflow: hidden;
-  visibility: hidden;
-}
-.stageSlide .slideWrap {
-  top: 0;
-  left: 0;
-  position: absolute;
-  overflow: hidden;
-}
-.stageSlide .slideWrap:before,
-.stageSlide .slideWrap:after {
-  content: " ";
-  display: table;
-}
-.stageSlide .slideWrap:after {clear: both;}
-.stageSlide .slideWrap {*zoom: 1;}
-
-.stageSlide .slidePanel {
-  float: left;
-  overflow: hidden;
-}
-
-.stageSlide .sdPrev,
-.stageSlide .sdNext {
-  margin-top: -25px;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  display: block;
-  position: absolute;
-  z-index: 99;
-}
-.stageSlide .sdPrev {
-  left: 80px;
-  background: transparent url(../img/slide_prev.png) no-repeat left top;
-}
-.stageSlide .sdNext {
-  right: 80px;
-  background: transparent url(../img/slide_next.png) no-repeat left top;
-}
-
-.stageSlide .slideNav {
-  bottom: 70px;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  text-align: center;
-  position: absolute;
-  z-index: 98;
-}
-.stageSlide .slideNav a {
-  margin: 0 5px;
-  width: 15px;
-  height: 15px;
-  background: transparent url(../img/nav.png) no-repeat center center;
-  display: inline-block;
-  overflow: hidden;
-}
-.stageSlide .slideNav a.pnActive {
-  background: transparent url(../img/nav_acv.png) no-repeat center center;
-}*/

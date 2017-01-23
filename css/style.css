@@ -1,3 +1,6 @@
+.pcUser {
+  display: none; }
+
 .tbUser {
   display: none; }
 
@@ -133,11 +136,6 @@ input, select {
 /***********************************
 * variable & function end *
 ***********************************/
-/* =======================================
-
-
-
-======================================= */
 a:link {
   text-decoration: none;
   color: #000; }
@@ -167,8 +165,9 @@ h2 {
   position: absolute;
   z-index: 1; }
 
-/* .stageBase
---------------------------- */
+/***********************************
+* common *
+***********************************/
 .stageBase {
   width: 100%;
   position: relative;
@@ -380,28 +379,92 @@ h2 {
 * spUser *
 ***********************************/
 .spUser {
-  /* fixed menu start */ }
-  .spUser .containerMenu {
-    top: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    width: 50vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 10;
-    text-align: center; }
-    .spUser .containerMenu .pageNav ul {
-      display: block; }
-      .spUser .containerMenu .pageNav ul li {
-        text-align: center;
-        height: 15px;
+  max-width: 768px;
+  background-image: url("../img/backimg_sp.jpg");
+  position: relative;
+  margin: 0 auto;
+  /* common start */
+  /* common end */
+  /* fixed menu start */
+  /* 8 page start*/
+  /* 8 page end*/ }
+  .spUser .stageBase {
+    max-width: 768px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin: 0 auto;
+    background: transparent; }
+    .spUser .stageBase .section_title {
+      color: red;
+      margin: 0 auto; }
+    .spUser .stageBase .hamMenu {
+      width: 40px;
+      height: 5vh;
+      background-color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      z-index: 20; }
+      .spUser .stageBase .hamMenu span {
+        width: 40px;
+        height: 5px;
         display: block;
-        margin-top: 7vh; }
-      .spUser .containerMenu .pageNav ul a {
-        width: 15vw;
-        height: 15px;
-        display: inline-block;
-        color: #fff; }
+        background-color: #000;
+        margin-bottom: 5px; }
+  .spUser .containerMenu {
+    max-width: 768px;
+    position: relative;
+    display: none; }
+    .spUser .containerMenu .menuWrap {
+      top: 0;
+      background: rgba(0, 0, 0, 0.5);
+      width: 50vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 10;
+      text-align: center;
+      margin-left: 50vw; }
+      .spUser .containerMenu .menuWrap .pageNav ul {
+        display: block;
+        text-align: center; }
+        .spUser .containerMenu .menuWrap .pageNav ul li {
+          text-align: center;
+          height: 15px;
+          display: block;
+          margin-top: 5vh;
+          height: 7vh; }
+        .spUser .containerMenu .menuWrap .pageNav ul a {
+          font-size: calc(50% + 1vw);
+          width: 30vw;
+          line-height: 7vh;
+          display: inline-block;
+          color: #fff; }
+  .spUser .on {
+    display: block; }
+  .spUser .stage8 {
+    background: #333;
+    color: #fff; }
+    .spUser .stage8 .contain_wrap08 {
+      width: 80vw;
+      height: 100vh;
+      margin: 0 auto; }
+      .spUser .stage8 .contain_wrap08 .ticket_title {
+        text-align: left; }
+      .spUser .stage8 .contain_wrap08 .price, .spUser .stage8 .contain_wrap08 .guide_str {
+        text-align: right; }
+      .spUser .stage8 .contain_wrap08 .ticket_title {
+        font-size: 2vw;
+        margin-top: 5vh; }
+      .spUser .stage8 .contain_wrap08 .price {
+        font-size: 2vw;
+        margin: 2vh 4vw 0 0; }
+      .spUser .stage8 .contain_wrap08 .notice_str {
+        font-size: 1.5vw;
+        margin-top: 4vh; }
+      .spUser .stage8 .contain_wrap08 .entry {
+        font-size: 6vw;
+        margin: 0 auto; }
 
 /* #pageDown
 --------------------------- */
@@ -517,13 +580,13 @@ h2 {
 * plugin slider css touch me ok!!! *
 ***********************************/
 .slider {
-  width: 40vw;
+  width: 100vw;
   height: 20vh;
   overflow: hidden;
   margin: 0 auto; }
 
 .slider img {
-  width: 30vw;
+  width: 100vw;
   height: 20vh; }
 
 .slick-slide {
@@ -540,69 +603,3 @@ h2 {
 /***********************************
 * plugin slider css touch me ok end!!! *
 ***********************************/
-/*
-.stageSlide
---------------------------- */
-/*.stageSlide {
-  position: relative;
-  overflow: hidden;
-  visibility: hidden;
-}
-.stageSlide .slideWrap {
-  top: 0;
-  left: 0;
-  position: absolute;
-  overflow: hidden;
-}
-.stageSlide .slideWrap:before,
-.stageSlide .slideWrap:after {
-  content: " ";
-  display: table;
-}
-.stageSlide .slideWrap:after {clear: both;}
-.stageSlide .slideWrap {*zoom: 1;}
-
-.stageSlide .slidePanel {
-  float: left;
-  overflow: hidden;
-}
-
-.stageSlide .sdPrev,
-.stageSlide .sdNext {
-  margin-top: -25px;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  display: block;
-  position: absolute;
-  z-index: 99;
-}
-.stageSlide .sdPrev {
-  left: 80px;
-  background: transparent url(../img/slide_prev.png) no-repeat left top;
-}
-.stageSlide .sdNext {
-  right: 80px;
-  background: transparent url(../img/slide_next.png) no-repeat left top;
-}
-
-.stageSlide .slideNav {
-  bottom: 70px;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  text-align: center;
-  position: absolute;
-  z-index: 98;
-}
-.stageSlide .slideNav a {
-  margin: 0 5px;
-  width: 15px;
-  height: 15px;
-  background: transparent url(../img/nav.png) no-repeat center center;
-  display: inline-block;
-  overflow: hidden;
-}
-.stageSlide .slideNav a.pnActive {
-  background: transparent url(../img/nav_acv.png) no-repeat center center;
-}*/
