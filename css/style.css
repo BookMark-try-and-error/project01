@@ -153,7 +153,6 @@ a:hover {
   color: #000; }
 
 h2 {
-  width: 40vw;
   font-size: 4vw; }
 
 /* .container
@@ -380,90 +379,193 @@ h2 {
 ***********************************/
 .spUser {
   max-width: 768px;
-  background-image: url("../img/backimg_sp.jpg");
   position: relative;
   margin: 0 auto;
   /* common start */
-  /* common end */
   /* fixed menu start */
+  /* fixed menu start */
+  /* common end */
+  /* 2 page start*/
+  /* 2 page end*/
   /* 8 page start*/
   /* 8 page end*/ }
-  .spUser .stageBase {
-    max-width: 768px;
-    position: relative;
-    overflow: hidden;
-    width: 100vw;
-    margin: 0 auto;
-    background: transparent; }
-    .spUser .stageBase .section_title {
-      color: red;
-      margin: 0 auto; }
-    .spUser .stageBase .hamMenu {
-      width: 40px;
-      height: 5vh;
-      background-color: #fff;
-      position: absolute;
-      top: 10px;
-      right: 0;
-      z-index: 20; }
-      .spUser .stageBase .hamMenu span {
-        width: 40px;
-        height: 5px;
-        display: block;
+  .spUser .hamMenuBox {
+    width: 30px;
+    height: 4vh;
+    position: fixed;
+    top: 2.5vh;
+    right: 2.5vw;
+    z-index: 20; }
+    .spUser .hamMenuBox .hamMenuCont,
+    .spUser .hamMenuBox .hamMenuCont span {
+      display: inline-block;
+      transition: all .4s;
+      box-sizing: border-box; }
+    .spUser .hamMenuBox .hamMenuCont {
+      width: 30px;
+      height: 4vh;
+      position: relative;
+      transition: 2.5s; }
+      .spUser .hamMenuBox .hamMenuCont span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 3px;
         background-color: #000;
-        margin-bottom: 5px; }
+        border-radius: 4px; }
+      .spUser .hamMenuBox .hamMenuCont span:nth-of-type(1) {
+        top: 0; }
+      .spUser .hamMenuBox .hamMenuCont span:nth-of-type(2) {
+        top: 10px; }
+      .spUser .hamMenuBox .hamMenuCont span:nth-of-type(3) {
+        top: 20px; }
+    .spUser .hamMenuBox .hamMenuCont.active span {
+      background-color: #fff; }
+    .spUser .hamMenuBox .hamMenuCont.active span:nth-of-type(1) {
+      -webkit-transform: translateY(10px) rotate(-45deg);
+      transform: translateY(10px) rotate(-45deg); }
+    .spUser .hamMenuBox .hamMenuCont.active span:nth-of-type(2) {
+      left: 50%;
+      opacity: 0;
+      -webkit-animation: active-menu-bar02 .8s forwards;
+      animation: active-menu-bar02 .8s forwards; }
+    .spUser .hamMenuBox .hamMenuCont.active span:nth-of-type(1) {
+      -webkit-transform: translateY(10px) rotate(-45deg);
+      transform: translateY(10px) rotate(-45deg); }
+    .spUser .hamMenuBox .hamMenuCont.active span:nth-of-type(2) {
+      left: 50%;
+      opacity: 0;
+      -webkit-animation: active-menu-bar02 .8s forwards;
+      animation: active-menu-bar02 .8s forwards; }
+@-webkit-keyframes active-menu-bar02 {
+  100% {
+    height: 0; } }
+@keyframes active-menu-bar02 {
+  100% {
+    height: 0; } }
+    .spUser .hamMenuBox .hamMenuCont.active span:nth-of-type(3) {
+      -webkit-transform: translateY(-10px) rotate(45deg);
+      transform: translateY(-10px) rotate(45deg); }
   .spUser .containerMenu {
     max-width: 768px;
     position: relative;
     display: none; }
     .spUser .containerMenu .menuWrap {
       top: 0;
-      background: rgba(0, 0, 0, 0.5);
-      width: 50vw;
+      background: rgba(0, 0, 0, 0.6);
+      width: 60vw;
       height: 100vh;
       position: fixed;
       z-index: 10;
       text-align: center;
-      margin-left: 50vw; }
+      margin-left: 40vw; }
       .spUser .containerMenu .menuWrap .pageNav ul {
         display: block;
         text-align: center; }
         .spUser .containerMenu .menuWrap .pageNav ul li {
           text-align: center;
-          height: 15px;
           display: block;
           margin-top: 5vh;
-          height: 7vh; }
+          height: 6.5vh; }
         .spUser .containerMenu .menuWrap .pageNav ul a {
-          font-size: calc(50% + 1vw);
-          width: 30vw;
-          line-height: 7vh;
+          font-size: calc(100% + 0.2vw);
+          width: 60vw;
+          line-height: 6.5vh;
           display: inline-block;
           color: #fff; }
   .spUser .on {
     display: block; }
+  .spUser .list_show {
+    width: 40px;
+    height: 6vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 2vh;
+    left: 0;
+    z-index: 20; }
+  .spUser .list_box {
+    width: 70vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: -70vw;
+    z-index: 20; }
+    .spUser .list_box ul {
+      display: block;
+      margin-top: 2vh; }
+      .spUser .list_box ul li {
+        text-align: center;
+        display: block;
+        height: 10vh; }
+        .spUser .list_box ul li a {
+          width: 60vw;
+          display: inline-block;
+          line-height: 10vh;
+          font-size: calc(100% + 0.2vw);
+          color: #fff; }
+  .spUser .stageBase {
+    max-width: 768px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url("../img/backimg_sp.jpg");
+    background-size: cover; }
+    .spUser .stageBase .section_title {
+      color: red;
+      margin: 0 auto;
+      height: 10vh;
+      line-height: 10vh;
+      font-size: 8vw;
+      font-size: calc(150% + 1vw); }
+  .spUser .title02 {
+    color: #333;
+    margin: 0 auto;
+    background: #333; }
+  .spUser .artists_detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 70%;
+    height: 50%;
+    z-index: 100; }
+  .spUser .stage2 {
+    background: #333; }
+    .spUser .stage2 .hamMenuCont.ham02 span {
+      background-color: #fff; }
   .spUser .stage8 {
     background: #333;
-    color: #fff; }
+    color: #fff;
+    height: 150vh; }
     .spUser .stage8 .contain_wrap08 {
-      width: 80vw;
-      height: 100vh;
+      max-width: 768px;
+      height: 150vh;
       margin: 0 auto; }
+      .spUser .stage8 .contain_wrap08 .hamMenuCont.ham08 span {
+        background-color: #fff; }
       .spUser .stage8 .contain_wrap08 .ticket_title {
-        text-align: left; }
+        text-align: left;
+        font-size: calc(100% + 0.5vw);
+        margin: 5vw 10vw 0;
+        word-wrap: break-word; }
+      .spUser .stage8 .contain_wrap08 .ticket_note {
+        text-align: left;
+        font-size: calc(50% + 0.5vw);
+        margin: 2vw 10vw 0;
+        word-wrap: break-word; }
       .spUser .stage8 .contain_wrap08 .price, .spUser .stage8 .contain_wrap08 .guide_str {
         text-align: right; }
-      .spUser .stage8 .contain_wrap08 .ticket_title {
-        font-size: 2vw;
-        margin-top: 5vh; }
       .spUser .stage8 .contain_wrap08 .price {
-        font-size: 2vw;
-        margin: 2vh 4vw 0 0; }
+        font-size: calc(100% + 0.5vw);
+        margin: 2vh 10vw 0 0; }
       .spUser .stage8 .contain_wrap08 .notice_str {
         font-size: 1.5vw;
         margin-top: 4vh; }
       .spUser .stage8 .contain_wrap08 .entry {
-        font-size: 6vw;
+        font-size: 6vmin;
         margin: 0 auto; }
 
 /* #pageDown
@@ -580,14 +682,13 @@ h2 {
 * plugin slider css touch me ok!!! *
 ***********************************/
 .slider {
-  width: 100vw;
-  height: 20vh;
   overflow: hidden;
   margin: 0 auto; }
 
 .slider img {
-  width: 100vw;
-  height: 20vh; }
+  width: 100%;
+  height: auto;
+  overflow: hidden; }
 
 .slick-slide {
   /*  */

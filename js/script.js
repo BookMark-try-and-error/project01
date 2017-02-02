@@ -9,7 +9,7 @@ $(function(){
 	scrollEasing = 'swing',
 	slideSpeed = 500,
 	slideEasing = 'linear',
-	downBtn = 'show', // 'show' or 'hide'
+	downBtn = 'hide', // 'show' or 'hide'
 	urlHash = 'on', // 'on' or 'off'
 	setHash = '!page',
 	// 固定メニュー定義
@@ -95,10 +95,26 @@ $(function(){
 		});
 	} // if (uA == 'pc') end
 
+	/**************************************************
+	   ハンバーガーメニュー
+	**************************************************/
 	/******SPの処理*****/
-	$('.hamMenu').on('click', function(){
+	$('.hamMenuBox').on('click', function(){
+		$('.hamMenuCont').toggleClass('active');
 		$('.containerMenu').toggleClass('on');
 	});
+	/**************************************************
+	   artists list
+	**************************************************/
+	/******SPの処理*****/
+	var dis = '70';
+	$('.list_show').on('click', function(){
+		$('.list_show, .list_box').animate({
+			'margin-left':'+=' + dis + 'vw'}, 200);
+			dis *= -1;
+	});
+
+
 
 
 
@@ -342,10 +358,13 @@ $(function(){
 				setPrev = acvStageP - 1;
 				$('body').attr('data-page',setPrev);
 
-				switch (setPrev !== 2){
-				case true:
-					$('.stage2').css('background-image', 'none');
-					break;
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					switch (setNext !== 2){
+					case true:
+						$('.stage2').css('background-image', 'none');
+						break;
+					}
 				}
 				/******PCの処理*****/
 				if (uA == 'pc') {
@@ -404,10 +423,18 @@ $(function(){
 
 				$('body').attr('data-page',setNext);
 
-				switch (setNext !== 2){
-				case true:
-					$('.stage2').css('background-image', 'none');
-					break;
+				// var y = $(".section_title").height();
+				// $(".section_title").text(y);
+				// var t = $(".slider01 img").height();
+				// $(".section_title").text(t);
+
+				/******PCの処理*****/
+				if (uA == 'pc') {
+					switch (setNext !== 2){
+					case true:
+						$('.stage2').css('background-image', 'none');
+						break;
+					}
 				}
 				/******PCの処理*****/
 				if (uA == 'pc') {
@@ -588,7 +615,7 @@ $(function(){
 		arrows: false,
 		infinite: true,
 		slidesToShow: 1, // 表示させるスライド数
-		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		// adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
 		speed: 1900, // スライド/フェードさせるスピード（ミリ秒）
 		autoplay: true, // 自動再生で切り替えする時間(ミリ秒)
 		autoplaySpeed: 1600,
@@ -602,7 +629,7 @@ $(function(){
 		arrows: false,
 		infinite: true,
 		slidesToShow: 1,
-		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		// adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
 		speed: 2300,
 		autoplay: true,
 		autoplaySpeed: 1300,
@@ -615,7 +642,7 @@ $(function(){
 		arrows: false,
 		infinite: true,
 		slidesToShow: 1,
-		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		// adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
 		speed: 1800,
 		autoplay: true,
 		autoplaySpeed: 2600,
@@ -629,7 +656,7 @@ $(function(){
 		arrows: false,
 		infinite: true,
 		slidesToShow: 1,
-		adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
+		// adaptiveHeight: true, // スライドの高さが違うときに自動調整するか
 		speed: 2700,
 		autoplay: true,
 		autoplaySpeed: 1900,

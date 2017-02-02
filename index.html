@@ -2,7 +2,10 @@
 <html xml:lang="ja" lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="user-scalable=0">
+<!-- <meta name="viewport" content="user-scalable=0"> -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>jQuery OnePage Scroll</title>
 <link rel="stylesheet" href="http://black-flag.net/data/css/reset.css">
 <link rel="stylesheet" href="css/style.css">
@@ -131,11 +134,38 @@
 <!-- スマートフォン表示 --><!-- スマートフォン表示 --><!-- スマートフォン表示 -->
 <!-- スマートフォン表示 --><!-- スマートフォン表示 --><!-- スマートフォン表示 -->
 <div class="container spUser">
+	<!-- ハンバーガーメニュー -->
+	<div class="hamMenuBox">
+		<div class="hamMenuCont ham02">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
 	<!-- メニュー表示部分 -->
 	<div class="containerMenu">
 		<section class="menuWrap">
 		</section>
 	</div>
+	<!-- アーティスト一覧表示ボタン -->
+	<div class="list_show">
+	</div>
+	<!-- アーティスト一覧 -->
+	<div class="list_box">
+		<ul>
+			<li><a href="#">アーティスト01</a></li>
+			<li><a href="#">アーティスト02</a></li>
+			<li><a href="#">アーティスト03</a></li>
+			<li><a href="#">アーティスト04</a></li>
+			<li><a href="#">アーティスト05</a></li>
+			<li><a href="#">アーティスト06</a></li>
+			<li><a href="#">アーティスト07</a></li>
+			<li><a href="#">アーティスト08</a></li>
+			<li><a href="#">アーティスト09</a></li>
+		</ul>
+	</div>
+
+
 
 	<!-- タイトル部分 -->
 	<div class="containTitle">
@@ -146,55 +176,42 @@
 	<section class="stage1 stageBase">
 		<div class="contain_wrap01">
 			<h2 class="title01 section_title"></h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは1ページ目</p>
 		</div><!--/.fieldWrap -->
 	</section>
 
 	<!-- ２ページ -->
 	<section class="stage2 stageBase">
-		<div class="overlay">
-			<h2 class="title02 section_title">ARTISTS</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<div class="artists_box">
-				<p>ここは2ページ目</p>
-				<p>アーティスト画像をランダムに配置</p>
-				<!-- スライダー０１ -->
-			  <div class="slider01 slider" dir="rtl">
-			    <div><img src="img/slider/s05.jpg" alt=""></div>
-			    <div><img src="img/slider/s02.jpg" alt=""></div>
-			    <div><img src="img/slider/s03.jpg" alt=""></div>
-			  </div>
-			  <!-- スライダー０２ -->
-			  <div class="slider02 slider">
-			    <div><img src="img/slider/s06.jpg" alt=""></div>
-			    <div><img src="img/slider/s07.jpg" alt=""></div>
-			    <div><img src="img/slider/s08.jpg" alt=""></div>
-			  </div>
-			  <!-- スライダー０３ -->
-			  <div class="slider03 slider" dir="rtl">
-			    <div><img src="img/slider/s10.jpg" alt=""></div>
-			    <div><img src="img/slider/s11.jpg" alt=""></div>
-			    <div><img src="img/slider/s12.jpg" alt=""></div>
-			  </div>
-			  <!-- スライダー０４ -->
-			  <div class="slider04 slider">
-			    <div><img src="img/slider/s14.jpg" alt=""></div>
-			    <div><img src="img/slider/s15.jpg" alt=""></div>
-			    <div><img src="img/slider/s09.jpg" alt=""></div>
-			  </div>
-			</div>
-			<div class="artists_detail">
-				<p>オーバーレイでアーティストの詳細情報の表示</p>
-			</div>
+		<h2 class="title02 section_title">ARTISTS</h2>
+
+		<div class="artists_box">
+			<!-- スライダー０１ -->
+		  <div class="slider01 slider" dir="rtl">
+		    <div><img src="img/slider/s05.jpg" alt=""></div>
+		    <div><img src="img/slider/s02.jpg" alt=""></div>
+		    <div><img src="img/slider/s03.jpg" alt=""></div>
+		  </div>
+		  <!-- スライダー０２ -->
+		  <div class="slider02 slider">
+		    <div><img src="img/slider/s06.jpg" alt=""></div>
+		    <div><img src="img/slider/s07.jpg" alt=""></div>
+		    <div><img src="img/slider/s02.jpg" alt=""></div>
+		  </div>
+		  <!-- スライダー０３ -->
+		  <div class="slider03 slider" dir="rtl">
+		    <div><img src="img/slider/s04.jpg" alt=""></div>
+		    <div><img src="img/slider/s01.jpg" alt=""></div>
+		    <div><img src="img/slider/s05.jpg" alt=""></div>
+		  </div>
+		  <!-- スライダー０４ -->
+		  <div class="slider04 slider">
+		    <div><img src="img/slider/s07.jpg" alt=""></div>
+		    <div><img src="img/slider/s02.jpg" alt=""></div>
+		    <div><img src="img/slider/s03.jpg" alt=""></div>
+		  </div>
+		</div>
+		<div class="artists_detail">
+			<p>オーバーレイでアーティストの詳細情報の表示</p>
 		</div>
 	</section>
 
@@ -202,11 +219,6 @@
 	<section class="stage3 stageBase">
 		<div class="contain_wrap03">
 			<h2 class="title03 section_title">TALK SHOW</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは3ページ目</p>
 		</div><!--/.fieldWrap -->
 	</section>
@@ -215,11 +227,6 @@
 	<section class="stage4 stageBase">
 		<div class="contain_wrap04">
 			<h2 class="title04 section_title">LIVE</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは4ページ目</p>
 		</div><!--/.fieldWrap -->
 	</section>
@@ -228,11 +235,6 @@
 	<section class="stage5 stageBase">
 		<div class="contain_wrap05">
 			<h2 class="title05 section_title">DJ</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは5ページ目</p>
 		</div><!--/.fieldWrap -->
 	</section>
@@ -241,11 +243,6 @@
 	<section class="stage6 stageBase">
 		<div class="contain_wrap06">
 			<h2 class="title06 section_title">TIME TABLE</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは6ページ目</p>
 		</div><!--/.fieldWrap -->
 	</section>
@@ -254,11 +251,6 @@
 	<section class="stage7 stageBase">
 		<div class="contain_wrap07">
 			<h2 class="title07 section_title">SPONSER</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<p>ここは7ページ目</p>
 		</div>
 	</section>
@@ -267,21 +259,32 @@
 	<section class="stage8 stageBase">
 		<div class="contain_wrap08">
 			<h2 class="title08 section_title">TICKET</h2>
-			<div class="hamMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<p class="ticket_title">samplesamplesamplesamplesamplesamplesamplesamplesample</p>
+			<p class="ticket_title">前売りチケット</p>
+			<p class="ticket_title">A 一般チケット</p>
+			<p class="ticket_note">※就活しないセミナー限定ノベルティ付きチケット
+			当日チケット拝見しお渡しさせて頂きます。</p>
+			<p class="price">¥1,500</p>
+			<p class="ticket_title">B ノベルティ付き</p>
+			<p class="ticket_note">※アーティスト活動などの宣材写真として使えるスタジオ撮影チケット
+			別日にて、4月8日(土曜日)、4月9日(日曜日)のどちらか希望日にてスタジオにお招きしアーティスト活動に必要な写真を撮影しデータでお渡し致します。</p>
 			<p class="price">¥2,000</p>
-			<p class="ticket_title">samplesamplesamplesamplesamplesamplesamplesamplesample</p>
-			<p class="price">¥2,000</p>
-			<p class="ticket_title">samplesamplesamplesamplesamplesamplesamplesamplesample</p>
-			<p class="price">¥2,000</p>
+			<p class="ticket_title">C プレミアム</p>
+			<p class="price">¥5,000</p>
+			<p class="ticket_title">当日チケット</p>
+			<p class="ticket_title">A 学生証提示</p>
+			<p class="price">¥1,500</p>
+			<p class="ticket_title">B 一般</p>
+			<p class="ticket_note">※アーティスト活動などの宣材写真として使えるスタジオ撮影チケット
+			別日にて、4月8日(土曜日)、4月9日(日曜日)のどちらか希望日にてスタジオにお招きしアーティスト活動に必要な写真を撮影しデータでお渡し致します。</p>
+			<p class="price">¥2,500</p>
+			<p class="ticket_title">C プレミアム</p>
+			<p class="price">¥6,000</p>
 			<p class="notice_str">以下のENTRYボタンよりチケット購入サイトへ移動します。</p>
 			<h2 class="entry">ENTRY</h2>
 		</div>
 	</section>
+
+
 </div><!--/#container-->
 </body>
 </html>
