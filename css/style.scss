@@ -7,6 +7,7 @@
 .spUser {
   display: none;
 }
+@charset 'UTF-8';
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -38,14 +39,14 @@ time, mark, audio, video {
   background: transparent;
 }
 
-body {
+body { // NOTICE!! PLUG-IN RELATE!!!
   font-size: 100%;
   line-height: 160%;
   color: #000;
   text-align: center;
   background: #fff;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; //important
   visibility: hidden;
   line-height: 1;
 	// -webkit-text-size-adjust: 100%;
@@ -166,7 +167,7 @@ h2 {
 
 /* .container
 --------------------------- */
-.container {
+.container { // NOTICE!! PLUG-IN RELATE!!!
   top: 0;
   left: 0;
   width: 100%;
@@ -201,6 +202,9 @@ h2 {
 	.section_title {
 		color: #ff4500;
 		font-size: 3.5vw;
+		// @include #{$small}{
+		// 	color: red;
+		// };
 	}
 	/* fixed menu start*/
 	.containerMenu { //div
@@ -463,11 +467,11 @@ h2 {
 
 	/* common start */
 	.hamMenuBox {
-		width: 30px;
-		height: 4vh;
+		width: 40px;
+		height: 5vh;
 		// background-color: rgba(0,0,0,0.2);
 		position: fixed; // important
-		top: 2.5vh;
+		top: 2.2vh;
 		right: 2.5vw;
 		z-index: 20;
 
@@ -482,10 +486,8 @@ h2 {
 			height: 4vh;
 			// background-color: rgba(0,0,0,0.5);
 			position: relative;; // important
-			// top: 1.5vh;
-			// right: 2.5vw;
-			// z-index: 25;
 			transition: 2.5s;
+			margin-top: 5px;
 
 			span {
 				position: absolute;
@@ -593,19 +595,24 @@ h2 {
 		  } //.pageNav end
 		}
 	} //.containerMenu end
-		/* fixed menu start */
+	/* fixed menu end */
 	.on{
 		display: block;
 	}
-
+	/* fixed artists list start */
 	.list_show {
-		width: 40px;
-		height: 6vh;
+		width: 7vmax;
+		height: 7vh;
 		background-color: rgba(0,0,0,0.7);
 		position: fixed; // important
 		top: 2vh;
 		left: 0;
 		z-index: 20;
+
+		img {
+			width: 7vmax;
+			height: 7vh;
+		}
 	}
 	.list_box {
 		width: 70vw;
@@ -634,6 +641,29 @@ h2 {
 			}
 		}
 	}
+	/* fixed artists list end */
+	/* fixed ENTRY start */
+	.circle{
+		width: 12vmax;
+		height: 12vh;
+		background: #333;
+		border-radius: 12vmax;
+		// -webkit-border-radius: 10vmax;
+		// -moz-border-radius: 10vmax;
+		position: fixed; // important
+		top: 60vh;
+		right: 10vw;
+		z-index: 20;
+
+		a {
+			display: inline-block;
+			width: 8vmax;
+			color: #fff;
+			font-size: 80%;
+			line-height: 12vh;
+		}
+	}
+	/* fixed ENTRY end */
 
 	.stageBase {
 		max-width: 768px;
@@ -651,19 +681,12 @@ h2 {
 			margin: 0 auto;
 			height: 10vh;
 			line-height: 10vh;
-		  font-size: 8vw;
 			font-size: calc(150% + 1vw);
 		}
 
 	} // .stageBase
 	/* common end */
 
-
-	.title02 {
-		color: #333;
-		margin: 0 auto;
-		background: #333;
-	}
 	.artists_detail {
 		position: absolute;
 		top: 0;
@@ -677,26 +700,77 @@ h2 {
 	/* 2 page start*/
 	.stage2 {
 		background: #333;
-		.hamMenuCont.ham02 {
-			span {
-				background-color: #fff;
-			}
-		}
+
 	}
 	/* 2 page end*/
+	/* 3 page start*/
+	.stage3 {
+		.mcImg {
+			width: 100vw;
+			height: 30vh;
+		}
+		.mcTitle {
+			height: 7vh;
+			line-height: 7vh;
+			font-size: calc(130% + 1vw);
+		}
+		p {
+			text-align: left;
+			line-height: 17px;
+			font-size: calc(90% + 0.5vw);
+			margin: 0 5vw;
+			word-wrap: break-word;
+		}
+		.sliderMc {
+			margin: 3vh 0;
+		}
+
+	}
+	/* 3 page end */
+	/* 4 page start */
+	.stage4 {
+		position: relative;
+
+		.floatStr {
+			position: absolute;
+			text-align: left;
+			margin: 0 5vw;
+			top: 50vh;
+		}
+		.liveImg {
+			width: 100vw;
+			height: 90vh;
+		}
+
+	}
+	/* 4 page end */
+	/* 5 page start */
+	.stage5 {
+
+		p {
+			text-align: left;
+			margin: 0 5vw;
+		}
+		.liveImg {
+			width: 100vw;
+			height: 90vh;
+		}
+
+	}
+	/* 5 page end */
 
 	/* 8 page start*/
 	.stage8 {
 		background: #333;
 		color: #fff;
-		height: 150vh;
+		height: 130vh;
 
 		.contain_wrap08 {
 			// width: 70vw;
 			// margin-left: 10vw;
 			// margin-right: 10vw;
 			max-width: 768px;
-			height: 150vh;
+			height: 130vh;
 			margin: 0 auto;
 
 			.hamMenuCont.ham08 {
@@ -826,7 +900,6 @@ h2 {
 .slick-track:after
 {
   display: table;
-
   content: '';
 }
 .slick-track:after
@@ -885,30 +958,271 @@ h2 {
 /***********************************
 * plugin slider css touch me ok!!! *
 ***********************************/
-.slider {
-    // width: 100vw;
-    // height: ;
-    overflow: hidden;
-    margin: 0 auto;
-}
-.slider img {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+.spUser {
+	.stage2 {
+		.slider {
+		    // width: 100vw;
+		    // height: ;
+		    overflow: hidden;
+		    margin: 0 auto;
+		}
+		.slider img {
+		  width: 100%;
+		  height: auto;
+		  overflow: hidden;
+		}
+
+		.slick-slide { /*  */
+		  margin: 0vw;
+		}
+
+		.slick-slide img {
+		  width: 100%;
+		}
+
+		.slick-prev:before,
+		.slick-next:before {
+		    color: #333;
+		}
+	}
+	.stage3 {
+		.slider {
+		    width: 100vw;
+		    height: 25vh;
+		    overflow: visible;
+		    margin: 0 auto;
+		}
+		.slider img {
+		  width: 200px;
+		  height: 20vh;
+		  overflow: hidden;
+		}
+
+		.slick-slide { /*  */
+		  margin: 5vw;
+		}
+
+		.slick-slide img {
+		  width: auto;
+			height: 20vh;
+		}
+
+		.slick-prev:before,
+		.slick-next:before {
+		    color: red;
+		}
+	}
 }
 
-.slick-slide { /*  */
-  margin: 0;
-}
-
-.slick-slide img {
-  width: 100%;
-}
-
-.slick-prev:before,
-.slick-next:before {
-    color: black;
-}
 /***********************************
 * plugin slider css touch me ok end!!! *
 ***********************************/
+
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('./ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+		z-index: 10;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 70px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+	width: 5vw;
+	height: 5vh;
+	left: 0;
+}
+[dir='rtl'] .slick-prev {
+	width: 5vw;
+	height: 5vh;
+	right: 15vw;
+	left: auto;
+}
+.slick-prev:before {
+		content: '<';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '>';
+}
+
+.slick-next {
+	width: 5vw;
+	height: 5vh;
+	right: 0;
+}
+[dir='rtl'] .slick-next {
+	right: auto;
+	left: 15vw;
+}
+.slick-next:before
+{
+	width: 5vw;
+	height: 5vh;
+	content: '>';
+}
+[dir='rtl'] .slick-next:before {
+	width: 5vw;
+	height: 5vh;
+	content: '<';
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: 25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: 'o';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}

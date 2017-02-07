@@ -383,17 +383,27 @@ h2 {
   margin: 0 auto;
   /* common start */
   /* fixed menu start */
-  /* fixed menu start */
+  /* fixed menu end */
+  /* fixed artists list start */
+  /* fixed artists list end */
+  /* fixed ENTRY start */
+  /* fixed ENTRY end */
   /* common end */
   /* 2 page start*/
   /* 2 page end*/
+  /* 3 page start*/
+  /* 3 page end */
+  /* 4 page start */
+  /* 4 page end */
+  /* 5 page start */
+  /* 5 page end */
   /* 8 page start*/
   /* 8 page end*/ }
   .spUser .hamMenuBox {
-    width: 30px;
-    height: 4vh;
+    width: 40px;
+    height: 5vh;
     position: fixed;
-    top: 2.5vh;
+    top: 2.2vh;
     right: 2.5vw;
     z-index: 20; }
     .spUser .hamMenuBox .hamMenuCont,
@@ -405,7 +415,8 @@ h2 {
       width: 30px;
       height: 4vh;
       position: relative;
-      transition: 2.5s; }
+      transition: 2.5s;
+      margin-top: 5px; }
       .spUser .hamMenuBox .hamMenuCont span {
         position: absolute;
         top: 0;
@@ -477,13 +488,16 @@ h2 {
   .spUser .on {
     display: block; }
   .spUser .list_show {
-    width: 40px;
-    height: 6vh;
+    width: 7vmax;
+    height: 7vh;
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 2vh;
     left: 0;
     z-index: 20; }
+    .spUser .list_show img {
+      width: 7vmax;
+      height: 7vh; }
   .spUser .list_box {
     width: 70vw;
     height: 100vh;
@@ -505,6 +519,21 @@ h2 {
           line-height: 10vh;
           font-size: calc(100% + 0.2vw);
           color: #fff; }
+  .spUser .circle {
+    width: 12vmax;
+    height: 12vh;
+    background: #333;
+    border-radius: 12vmax;
+    position: fixed;
+    top: 60vh;
+    right: 10vw;
+    z-index: 20; }
+    .spUser .circle a {
+      display: inline-block;
+      width: 8vmax;
+      color: #fff;
+      font-size: 80%;
+      line-height: 12vh; }
   .spUser .stageBase {
     max-width: 768px;
     overflow: hidden;
@@ -518,12 +547,7 @@ h2 {
       margin: 0 auto;
       height: 10vh;
       line-height: 10vh;
-      font-size: 8vw;
       font-size: calc(150% + 1vw); }
-  .spUser .title02 {
-    color: #333;
-    margin: 0 auto;
-    background: #333; }
   .spUser .artists_detail {
     position: absolute;
     top: 0;
@@ -534,15 +558,44 @@ h2 {
     z-index: 100; }
   .spUser .stage2 {
     background: #333; }
-    .spUser .stage2 .hamMenuCont.ham02 span {
-      background-color: #fff; }
+  .spUser .stage3 .mcImg {
+    width: 100vw;
+    height: 30vh; }
+  .spUser .stage3 .mcTitle {
+    height: 7vh;
+    line-height: 7vh;
+    font-size: calc(130% + 1vw); }
+  .spUser .stage3 p {
+    text-align: left;
+    line-height: 17px;
+    font-size: calc(90% + 0.5vw);
+    margin: 0 5vw;
+    word-wrap: break-word; }
+  .spUser .stage3 .sliderMc {
+    margin: 3vh 0; }
+  .spUser .stage4 {
+    position: relative; }
+    .spUser .stage4 .floatStr {
+      position: absolute;
+      text-align: left;
+      margin: 0 5vw;
+      top: 50vh; }
+    .spUser .stage4 .liveImg {
+      width: 100vw;
+      height: 90vh; }
+  .spUser .stage5 p {
+    text-align: left;
+    margin: 0 5vw; }
+  .spUser .stage5 .liveImg {
+    width: 100vw;
+    height: 90vh; }
   .spUser .stage8 {
     background: #333;
     color: #fff;
-    height: 150vh; }
+    height: 130vh; }
     .spUser .stage8 .contain_wrap08 {
       max-width: 768px;
-      height: 150vh;
+      height: 130vh;
       margin: 0 auto; }
       .spUser .stage8 .contain_wrap08 .hamMenuCont.ham08 span {
         background-color: #fff; }
@@ -681,26 +734,199 @@ h2 {
 /***********************************
 * plugin slider css touch me ok!!! *
 ***********************************/
-.slider {
+.spUser .stage2 .slider {
   overflow: hidden;
   margin: 0 auto; }
-
-.slider img {
+.spUser .stage2 .slider img {
   width: 100%;
   height: auto;
   overflow: hidden; }
-
-.slick-slide {
+.spUser .stage2 .slick-slide {
   /*  */
-  margin: 0; }
-
-.slick-slide img {
+  margin: 0vw; }
+.spUser .stage2 .slick-slide img {
   width: 100%; }
-
-.slick-prev:before,
-.slick-next:before {
-  color: black; }
+.spUser .stage2 .slick-prev:before,
+.spUser .stage2 .slick-next:before {
+  color: #333; }
+.spUser .stage3 .slider {
+  width: 100vw;
+  height: 25vh;
+  overflow: visible;
+  margin: 0 auto; }
+.spUser .stage3 .slider img {
+  width: 200px;
+  height: 20vh;
+  overflow: hidden; }
+.spUser .stage3 .slick-slide {
+  /*  */
+  margin: 5vw; }
+.spUser .stage3 .slick-slide img {
+  width: auto;
+  height: 20vh; }
+.spUser .stage3 .slick-prev:before,
+.spUser .stage3 .slick-next:before {
+  color: red; }
 
 /***********************************
 * plugin slider css touch me ok end!!! *
 ***********************************/
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat; }
+
+/* Icons */
+@font-face {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  src: url("./fonts/slick.eot");
+  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg"); }
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 10; }
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent; }
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1; }
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: .25; }
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 70px;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.slick-prev {
+  width: 5vw;
+  height: 5vh;
+  left: 0; }
+
+[dir='rtl'] .slick-prev {
+  width: 5vw;
+  height: 5vh;
+  right: 15vw;
+  left: auto; }
+
+.slick-prev:before {
+  content: '<'; }
+
+[dir='rtl'] .slick-prev:before {
+  content: '>'; }
+
+.slick-next {
+  width: 5vw;
+  height: 5vh;
+  right: 0; }
+
+[dir='rtl'] .slick-next {
+  right: auto;
+  left: 15vw; }
+
+.slick-next:before {
+  width: 5vw;
+  height: 5vh;
+  content: '>'; }
+
+[dir='rtl'] .slick-next:before {
+  width: 5vw;
+  height: 5vh;
+  content: '<'; }
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: 25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center; }
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer; }
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent; }
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none; }
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1; }
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: 'o';
+  text-align: center;
+  opacity: .25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: black; }
