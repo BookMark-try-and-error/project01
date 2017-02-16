@@ -7,6 +7,7 @@
 .spUser {
   display: none;
 }
+
 @charset 'UTF-8';
 /*
 html5doctor.com Reset Stylesheet
@@ -453,32 +454,20 @@ h2 {
 /***********************************
 * spUser *
 ***********************************/
-h2 {
-	// height: 6vh;
-	// line-height: 6vh;
-  // font-size: 4vw;
-	// font-size: calc(150% + 2vw);
-}
 .spUser {
 	max-width: 768px;
-	// background-image: url("../img/backimg_sp.jpg");
 	position: relative; // important
 	margin: 0 auto;
 
-	.fixBox {
-		max-width: 768px;
-		// width: 80vw;
-		height: 100vh;
-		position: fixed;
-		z-index: 20;
-		top: 0;
-		background: rgba(0,0,0,0.7);
 		/*  */
 		.hamMenuBox {
 			width: 40px;
 			height: 40px;
 			// background-color: rgba(0,0,0,0.2);
-			position: relative; // important
+			position: fixed; // important
+			z-index: 35;
+			top: 2.5vh;
+			right: 2.5vw;
 
 			.hamMenuCont,
 			.hamMenuCont span {
@@ -490,7 +479,7 @@ h2 {
 				width: 30px;
 				height: 30px;
 				// background-color: rgba(0,0,0,0.5);
-				position: relative;; // important
+				position: relative; // important
 				transition: 2.5s;
 				margin-top: 5px;
 
@@ -521,7 +510,7 @@ h2 {
 				// position: absolute;
 				// top: 5px;
 				// right: 5px;
-				// z-index: 100;
+				// z-index: 35;
 
 				span{
 					background-color: #fff;
@@ -574,19 +563,20 @@ h2 {
 				width: 60vw;
 				height: 100vh;
 				position: fixed;
-				z-index: 10;
+				z-index: 30;
 				text-align: center;
 				margin-left: 40vw;
 				.pageNav {
 			  	ul {
 					  display: block;
 						text-align: center;
+						height: 60vh;
+						margin: 20vh auto;
 					  li {
 						  text-align: center;
 						  display: block;
-						  margin-top: 5vh;
-							//width: 15vw;
 							height: 6.5vh;
+							margin-top: 0.8vh;
 						}
 						a {
 							//font-size: 3.5vw;
@@ -612,7 +602,7 @@ h2 {
 			position: fixed; // important
 			top: 2vh;
 			left: 0;
-			z-index: 20;
+			z-index: 30;
 
 			img {
 				width: 40px;
@@ -626,7 +616,7 @@ h2 {
 			position: fixed; // important
 			top: 0;
 			left: -70vw;
-			z-index: 20;
+			z-index: 30;
 
 			ul {
 				display: block;
@@ -651,13 +641,13 @@ h2 {
 		.circle{
 			width: 70px;
 			height: 70px;
-			background: #333;
+			background: #000;
 			border-radius: 12vmax;
-			// -webkit-border-radius: 10vmax;
-			// -moz-border-radius: 10vmax;
+			-webkit-border-radius: 12vmax;
+			-moz-border-radius: 12vmax;
 			position: fixed; // important
-			top: 60vh;
-			right: 10vw;
+			top: 54vh;
+			right: 6vw;
 			z-index: 20;
 
 			a {
@@ -669,14 +659,11 @@ h2 {
 			}
 		}
 		/* fixed ENTRY end */
-	}
-
-
 	.stageBase {
 		max-width: 768px;
 		// position: relative;
 		overflow: hidden;
-		width: 100vw;
+		// width: 100vw;
 		height: 100vh;
 		margin: 0 auto;
 		// background: rgba(0,0,0,0);
@@ -690,25 +677,101 @@ h2 {
 			line-height: 10vh;
 			font-size: calc(150% + 1vw);
 		}
-
 	} // .stageBase
+	.landscape {
+		height: 100%;
+		.section_title {
+			height: 20vh;
+			line-height: 20vh;
+		}
+	}
 	/* common end */
 
-	.artists_detail {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		width: 70%;
-		height: 50%;
-		z-index: 100;
-		// background: rgba(255,255,255,0.9);
+	/* 1 page start*/
+	.stage1 {
+		position: relative;
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		.contain_wrap01 {
+			position: absolute;
+			bottom: 0;
+			left: 1%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
+	.landscape.stage1 {
+		height: 300vh;
+	}
+	/* 1 page end*/
 	/* 2 page start*/
 	.stage2 {
 		background: #333;
+		position: relative;
 
-	}
+		// overlay
+		.artists_detail {
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: none;
+			width: 100vw;
+			height: 100vh;
+			z-index: 40;
+			background: rgba(255,255,255,0.9);
+
+			.close {
+				font-size: calc(110% + 1vw);
+				margin: 3% 0;
+			}
+			img {
+				width: 90%;
+				height: auto;
+			}
+			h3 {
+				font-size: calc(110% + 1vw);
+				margin: 2% 3%;
+				text-align: left;
+			}
+			.detail_link {
+				margin: 0 3%;
+				text-align: left;
+				font-size: calc(70% + 0.3vw);
+				word-break: break-all;
+				line-height: 120%;
+			}
+			.detail_link_item {
+				text-align: left;
+				margin: 0 3%;
+			}
+			.detail_under {
+				height: 40%;
+				width: 100%;
+				background: #333;
+				position: absolute;
+				bottom: 0;
+				p {
+					width: 100%;
+					height: 100%;
+					span {
+						display: block;
+						width: 94%;
+						height: 95%;
+						margin: 2% auto;
+						overflow-y: scroll;
+						text-align: left;
+						color: #fff;
+						word-break: break-all;
+						font-size: calc(80% + 0.3vw);
+						line-height: 120%;
+					}
+				}
+			}
+		} // overlay end
+	} // stage2 end
 	/* 2 page end*/
 	/* 3 page start*/
 	.stage3 {
@@ -741,7 +804,8 @@ h2 {
 		.floatStr {
 			position: absolute;
 			text-align: left;
-			margin: 0 5vw;
+			margin: 0 15vw;
+			font-size: calc(100% + 0.5vw);
 			top: 50vh;
 		}
 		.liveImg {
@@ -759,18 +823,28 @@ h2 {
 
 		p {
 			text-align: left;
-			font-size: calc(70% + 0.5vw);;
-			margin: 0 5vw;
+			font-size: calc(80% + 0.5vw);
+			margin: 0 3vw;
 		}
 		.djImg01 {
 			width: 80vw;
 			height: 25vh;
+			margin-top: 2vh;
+		}
+		.svgArea {
+			width: 80%;
+			height: 20%;
+			position: absolute;
+			top: 48%;
+			left: 10%;
+			background: blue;
+			z-index: 10
 		}
 		.underBox {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			height: 50vh;
+			height: 43vh;
 			width: 100vw;
 			background: #333;
 			// position: relative;
@@ -781,7 +855,7 @@ h2 {
 				// position: absolute;
 				// top: 10vh;
 				// left: 0;
-				margin: 12.5vh auto;
+				margin: 15vh auto 0;
 			}
 		}
 
@@ -807,29 +881,34 @@ h2 {
 					background-color: #fff;
 				}
 			}
-
-			.ticket_title {
+			.ticket_cate {
 				text-align: left;
 				font-size: calc(100% + 0.5vw);
-			  margin: 5vw 10vw 0;
-				word-wrap: break-word;
+			  margin: 4vh 6vw 0;
+			}
+			.ticket_title {
+				text-align: left;
+				font-size: calc(90% + 0.5vw);
+			  margin: 5vh 6vw 0;
+				line-height: 120%;
 			}
 			.ticket_note {
 				text-align: left;
-				font-size: calc(50% + 0.5vw);
-			  margin: 2vw 10vw 0;
+				font-size: calc(80% + 0.5vw);
+			  margin: 2vh 6vw 0;
 				word-wrap: break-word;
+				line-height: 115%;
 			}
 			.price, .guide_str {
 				text-align: right;
 			}
 			.price {
-			  font-size: calc(100% + 0.5vw);
-			  margin: 2vh 10vw 0 0;
+			  font-size: calc(90% + 0.5vw);
+			  margin: 2vh 6vw 0 0;
 			}
 			.notice_str {
-			  font-size: 1.5vw;
-			  margin-top: 4vh;
+			  font-size: calc(80% + 0.5vw);
+			  margin: 4vh 6vw 0;
 			}
 			.entrySp {
 			  // margin: 4vh 0 0 1vw;
@@ -853,7 +932,6 @@ h2 {
 
 	} // .stage8 end
 	/* 8 page end*/
-
 
 } //.spUser end
 
@@ -882,127 +960,9 @@ h2 {
 }
 
 /***********************************
-* plugin slider css don't touch!!!!! *
-***********************************/
-.slick-slider
-{
-  position: relative;
-
-  display: block;
-  box-sizing: border-box;
-
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-      touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-  position: relative;
-
-  display: block;
-  overflow: hidden;
-
-  margin: 0;
-  padding: 0;
-}
-.slick-list:focus
-{
-  outline: none;
-}
-.slick-list.dragging
-{
-  cursor: pointer;
-  cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list
-{
-  -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-       -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
-
-.slick-track
-{
-  position: relative;
-  top: 0;
-  left: 0;
-
-  display: block;
-}
-.slick-track:before,
-.slick-track:after
-{
-  display: table;
-  content: '';
-}
-.slick-track:after
-{
-  clear: both;
-}
-.slick-loading .slick-track
-{
-  visibility: hidden;
-}
-
-.slick-slide
-{
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-[dir='rtl'] .slick-slide
-{
-  float: right;
-}
-.slick-slide img
-{
-  display: block;
-}
-.slick-slide.slick-loading img
-{
-  display: none;
-}
-.slick-slide.dragging img
-{
-  pointer-events: none;
-}
-.slick-initialized .slick-slide
-{
-  display: block;
-}
-.slick-loading .slick-slide
-{
-  visibility: hidden;
-}
-.slick-vertical .slick-slide
-{
-  display: block;
-  height: auto;
-  border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-  display: none;
-}
-/***********************************
-* plugin slider css don't touch!!!!! end *
-***********************************/
-
-/***********************************
 * plugin slider css touch me ok!!! *
 ***********************************/
+
 .spUser {
 	.stage2 {
 		.slider {
@@ -1027,9 +987,10 @@ h2 {
 
 		.slick-prev:before,
 		.slick-next:before {
-		    color: #333;
+		    color: #fff;
 		}
 	}
+
 	.stage3 {
 		.slider {
 		    width: 100vw;
@@ -1038,13 +999,13 @@ h2 {
 		    margin: 0 auto;
 		}
 		.slider img {
-		  width: 200px;
+		  width: auto;
 		  height: 20vh;
 		  overflow: hidden;
 		}
 
 		.slick-slide { /*  */
-		  margin: 5vw;
+		  margin: 3vw;
 		}
 
 		.slick-slide img {
@@ -1052,222 +1013,58 @@ h2 {
 			height: 20vh;
 		}
 
+    .slick-prev {
+        z-index: 10;
+        left: 0px;
+        [dir="rtl"] & {
+            z-index: 10;
+            left: auto;
+            right: 0;
+        }
+    }
+
+    .slick-next {
+        z-index: 10;
+        right: 0;
+        [dir="rtl"] & {
+            z-index: 10;
+            left: 0;
+            right: auto;
+        }
+    }
 		.slick-prev:before,
 		.slick-next:before {
-		    color: red;
+			color: #fff;
+		}
+	}
+	.stage3.landscape {
+		.slider {
+				width: 100vw;
+				height: 50%;
+				overflow: visible;
+				margin: 0 auto;
+		}
+		.slider img {
+			width: auto;
+			height: 50%;
+			overflow: hidden;
+		}
+
+		.slick-slide { /*  */
+			margin: 5vw;
+		}
+
+		.slick-slide img {
+			width: auto;
+			height: 50%;
+		}
+
+		.slick-prev:before,
+		.slick-next:before {
+			color: #fff;
 		}
 	}
 }
-
 /***********************************
 * plugin slider css touch me ok end!!! *
 ***********************************/
-
-/* Slider */
-.slick-loading .slick-list
-{
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
-}
-
-/* Icons */
-@font-face
-{
-    font-family: 'slick';
-    font-weight: normal;
-    font-style: normal;
-
-    src: url('./fonts/slick.eot');
-    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
-}
-/* Arrows */
-.slick-prev,
-.slick-next
-{
-    font-size: 0;
-    line-height: 0;
-
-    position: absolute;
-    top: 50%;
-
-    display: block;
-
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-
-    cursor: pointer;
-
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-		z-index: 10;
-}
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus
-{
-    color: transparent;
-    outline: none;
-    background: transparent;
-}
-.slick-prev:hover:before,
-.slick-prev:focus:before,
-.slick-next:hover:before,
-.slick-next:focus:before
-{
-    opacity: 1;
-}
-.slick-prev.slick-disabled:before,
-.slick-next.slick-disabled:before
-{
-    opacity: .25;
-}
-
-.slick-prev:before,
-.slick-next:before
-{
-    font-family: 'slick';
-    font-size: 70px;
-    line-height: 1;
-
-    opacity: .75;
-    color: white;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev {
-	width: 5vw;
-	height: 5vh;
-	left: 0;
-}
-[dir='rtl'] .slick-prev {
-	width: 5vw;
-	height: 5vh;
-	right: 15vw;
-	left: auto;
-}
-.slick-prev:before {
-		content: '<';
-}
-[dir='rtl'] .slick-prev:before
-{
-    content: '>';
-}
-
-.slick-next {
-	width: 5vw;
-	height: 5vh;
-	right: 0;
-}
-[dir='rtl'] .slick-next {
-	right: auto;
-	left: 15vw;
-}
-.slick-next:before
-{
-	width: 5vw;
-	height: 5vh;
-	content: '>';
-}
-[dir='rtl'] .slick-next:before {
-	width: 5vw;
-	height: 5vh;
-	content: '<';
-}
-
-/* Dots */
-.slick-dotted.slick-slider
-{
-    margin-bottom: 30px;
-}
-
-.slick-dots
-{
-    position: absolute;
-    bottom: 25px;
-
-    display: block;
-
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    list-style: none;
-
-    text-align: center;
-}
-.slick-dots li
-{
-    position: relative;
-
-    display: inline-block;
-
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    padding: 0;
-
-    cursor: pointer;
-}
-.slick-dots li button
-{
-    font-size: 0;
-    line-height: 0;
-
-    display: block;
-
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-
-    cursor: pointer;
-
-    color: transparent;
-    border: 0;
-    outline: none;
-    background: transparent;
-}
-.slick-dots li button:hover,
-.slick-dots li button:focus
-{
-    outline: none;
-}
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before
-{
-    opacity: 1;
-}
-.slick-dots li button:before
-{
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 20px;
-    height: 20px;
-
-    content: 'o';
-    text-align: center;
-
-    opacity: .25;
-    color: black;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.slick-dots li.slick-active button:before
-{
-    opacity: .75;
-    color: black;
-}

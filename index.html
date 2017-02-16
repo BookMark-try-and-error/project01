@@ -9,14 +9,16 @@
 <title>jQuery OnePage Scroll</title>
 <link rel="stylesheet" href="http://black-flag.net/data/css/reset.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="slick/slick.css">
+<link rel="stylesheet" href="slick/slick-theme.css">
 <!-- <link rel="stylesheet" href="assets/css/styles.css" /> -->
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/jquery.shuffleLetters.js"></script>
 <script src="js/script.js"></script>
-<script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-</script>
+<script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script type="text/javascript">
+</script> -->
 </head>
 <!-- 追加 -->
 <body>
@@ -124,17 +126,22 @@
 	</section>
 </div><!--/#container-->
 
+
+
+
 <!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 -->
 <!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 -->
 <!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 --><!-- タブレット表示 -->
 <div class="container tbUser">
 </div><!--/#container-->
 
+
+
+
 <!-- スマートフォン表示 --><!-- スマートフォン表示 --><!-- スマートフォン表示 -->
 <!-- スマートフォン表示 --><!-- スマートフォン表示 --><!-- スマートフォン表示 -->
 <!-- スマートフォン表示 --><!-- スマートフォン表示 --><!-- スマートフォン表示 -->
 <div class="container spUser">
-	<div class="fixBox">
 		<!-- ハンバーガーメニュー -->
 		<div class="hamMenuBox">
 			<div class="hamMenuCont ham02">
@@ -155,6 +162,7 @@
 		<!-- アーティスト一覧 -->
 		<div class="list_box">
 			<ul>
+				<li><a href="#">アーティスト00</a></li>
 				<li><a href="#">アーティスト01</a></li>
 				<li><a href="#">アーティスト02</a></li>
 				<li><a href="#">アーティスト03</a></li>
@@ -162,65 +170,197 @@
 				<li><a href="#">アーティスト05</a></li>
 				<li><a href="#">アーティスト06</a></li>
 				<li><a href="#">アーティスト07</a></li>
-				<li><a href="#">アーティスト08</a></li>
-				<li><a href="#">アーティスト09</a></li>
 			</ul>
 		</div>
 		<!-- ENTRYボタン -->
 		<div class="circle">
 			<a href="#">ENTRY</a>
 		</div>
-	</div>
-
-
-
-
-
-	<!-- タイトル部分 -->
-	<div class="containTitle">
-
-	</div>
 
 	<!-- １ページ -->
 	<section class="stage1 stageBase">
+		<div class="nullContain">
+		</div>
 		<div class="contain_wrap01">
-			<h2 class="title01 section_title"></h2>
-			<p>ここは1ページ目</p>
+			<img src="img/sp01/jukeboxsp.png" alt="jukebox">
 		</div><!--/.fieldWrap -->
 	</section>
 
 	<!-- ２ページ ARTISTS -->
 	<section class="stage2 stageBase">
 		<h2 class="title02 section_title">ARTISTS</h2>
-
-		<div class="artists_box">
+		<div class="artists_box sliderBox">
 			<!-- スライダー０１ -->
 		  <div class="slider01 slider" dir="rtl">
-		    <div><img src="img/slider/s05.jpg" alt=""></div>
-		    <div><img src="img/slider/s02.jpg" alt=""></div>
-		    <div><img src="img/slider/s03.jpg" alt=""></div>
+		    <div><img src="img/sp02/s01.jpg" alt="" class="sImg0"></div>
+		    <div><img src="img/sp02/s02.jpg" alt="" class="sImg1"></div>
 		  </div>
 		  <!-- スライダー０２ -->
 		  <div class="slider02 slider">
-		    <div><img src="img/slider/s06.jpg" alt=""></div>
-		    <div><img src="img/slider/s07.jpg" alt=""></div>
-		    <div><img src="img/slider/s02.jpg" alt=""></div>
+		    <div><img src="img/sp02/s03.jpg" alt="" class="sImg2"></div>
+		    <div><img src="img/sp02/s04.jpg" alt="" class="sImg3"></div>
 		  </div>
 		  <!-- スライダー０３ -->
 		  <div class="slider03 slider" dir="rtl">
-		    <div><img src="img/slider/s04.jpg" alt=""></div>
-		    <div><img src="img/slider/s01.jpg" alt=""></div>
-		    <div><img src="img/slider/s05.jpg" alt=""></div>
+		    <div><img src="img/sp02/s05.jpg" alt="" class="sImg4"></div>
+		    <div><img src="img/sp02/s06.jpg" alt="" class="sImg5"></div>
 		  </div>
 		  <!-- スライダー０４ -->
 		  <div class="slider04 slider">
-		    <div><img src="img/slider/s07.jpg" alt=""></div>
-		    <div><img src="img/slider/s02.jpg" alt=""></div>
-		    <div><img src="img/slider/s03.jpg" alt=""></div>
+		    <div><img src="img/sp02/s07.jpg" alt="" class="sImg6"></div>
+		    <div><img src="img/sp02/s08.jpg" alt="" class="sImg7"></div>
 		  </div>
 		</div>
-		<div class="artists_detail">
-			<p>オーバーレイでアーティストの詳細情報の表示</p>
+		<!-- アーティスト詳細 -->
+		<div class="artists_detail detail0">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">DAN</h3>
+			<p class="detail_link"><a href="https://www.instagram.com/officialblackdan/">Instagram https://www.instagram.com/officialblackdan/</a></p>
+			<p class="detail_link_item">-oops-</p>
+			<p class="detail_link"><a href="http://d-oops.xyz">HP http://d-oops.xyz</a></p>
+			<p class="detail_link"><a href="https://mobile.twitter.com/d_oops_xyz">Twitter https://mobile.twitter.com/d_oops_xyz//</a></p>
+			<p class="detail_link"><a href="https://instagram.com/d_oops_xyz/">Instagram https://instagram.com/d_oops_xyz/</a></p>
+			<p class="detail_link"><a href="http://oops.theshop.jp">on-line http://oops.theshop.jp</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						ファッションブランド”oops”のデザイナー、ディレクター。現在ファッションを軸に、クリエーションをしているアーティスト。幼少の頃に、Black Musicに魅了され数多のジャンルを辿り、中高生で再度、Black Musicに目覚め、高校卒業直後に音楽での表現を始め、音楽とファッションはイコールにあった思想で想いを届けていた。20歳になる頃に某会社の方に見出され、アパレルの道も平行し表現方法は二つに。そして、本格的に、2015年にファッションブランド”oops”をスタート。現在、イベント主催、スタイリスト、楽曲提供などにも力をいれ、自らできる表現方法を十二分に発揮している、アーティスト、デザイナー。-oops- 2015年VOGUEピックアップやヒューマンビートボックスアーティストSh0hさんのスポンサーなども話題になり10代20代を中心に人気を誇るブランド。最高級ラインでは世界で一つの完全オーダーメイド、一般ラインではオンラインを中心に販売。5月にはギャラリー会、受注会を控えている。ファッションブランド『REBERTAS』デザイナーと共に、点描画を中心としたアシッドな雰囲気なアートを描くアーティスト"TOMO¥A"とのクリエイティブユニット『DAT』を結成し、活動中である。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail1">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">mtk</h3>
+			<p class="detail_link"><a href="https://www.instagram.com/mtk.motoki/?hl=ja">Instagram https://www.instagram.com/mtk.motoki/?hl=ja</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						経歴<br><br>小学生時代<br>相撲と書道にすべてを捧ぐ。<br><br>中学生時代<br>遊んでしかいない。<br><br>高校生時代<br>中退し、メンズエッグのモデルとして一定期間活動。<br>大学生に憧れて半年間の猛勉強の末大学入学を決める。<br><br>大学生時代<br>ダンスにのめり込む。<br>hiphopのアンダーグラウンドシーンで活動する傍らで、EDWINやPioneerのCMに出演するなど、幅広く活動。<br><br>社会人<br>一度、有名アパレル通販サイトの〇〇townへ入社するも、自分での起業を目指し半年で退社<br><br>現在<br>表現屋無鉄砲という映像制作、写真撮影、デザイン制作を主とした事業をスタート。<br>無鉄砲では、共同代表としての活動と営業活動をし、様々な業界の人と日々未来について作戦を練っている。<br><br>その傍らでNijiriという飲食店を2017年夏に湘南、鎌倉、葉山近辺でのオープンに向け動き始めている。<br>26歳冬にカリフォルニアに武者修行として3ヶ月滞在。2017年１月現在カリフォルニアに在住。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail2">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">ShOh</h3>
+			<p class="detail_link"><a href="https://m.youtube.com/playlist?list=PL7vDKUrwM5O7ndLkDUMQuhVKG03RpgX5G">https://m.youtube.com/playlist?list=PL7vDKUrwM5O7ndLkDUMQuhVKG03RpgX5G</a></p>
+			<p class="detail_link"><a href="https://vimeo.com/149567995">https://vimeo.com/149567995</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+					Sh0h(ショー) The ”HumanDisco”。HUMAN BEATBOX公式日本チャンピオン。マイケル・ジャクソンの右腕であるトラヴィス・ペイン氏にその実力を認められ、直々に契約を交わした、世界を股にかけるHUMAN BEATBOX ARTIST。10代の頃から世界大会のGUEST SHOWCASEや、TVCM等の出演を経験。ドイツで開催されたHUMAN BEATBOXの世界大会では日本代表として出場し、アジア最高順位であるBEST16を獲得。その他にも、世界最大級のトークショーである”TEDx”や大型野外フェスティバル"SUMMER SONIC”に出演する等、その唯一無二のスタイルで全世界で魅了する次世代アーティスト。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail3">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">TOMO¥A</h3>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						Artist/Creator ペン画やドローイングを中心に、アクリル、コラージュなどの作品を制作している。中でも点描画(スティップリング)を得意とし、その精密さとニヒルでアシッドな雰囲気が特徴的である。そして自身のファッションブランド「REBERTAS」のデザイナー、ディレクターとしての一面も持つ。(2015/ラフォーレ原宿短日売上1位、全国PARCO Pop Up Storeなど)その他、グラフィックや映像、3DCG、プロジェクションマッピングなど最新のテクノロジーを駆使したユニット(TOMO¥A×MasanaoTakeuthi by Octmarker @Octmarkerland)やオートクチュールを中心にシーズンを展開するハイストリートブランド「OOPS @d_oops_xyz」のデザイナーDAN @officialblackdanとのクリエイティブユニット「DAT」を結成、活動中である。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail4">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">Sumire Onuki</h3>
+			<p class="detail_link"><a href="http://instagram.com/sumireonuki">Instagram http://instagram.com/sumireonuki</a></p>
+			<p class="detail_link"><a href="https://mobile.twitter.com/sumireonuki">Twitter https://mobile.twitter.com/sumireonuki</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						dance artist、アートディレクター、イベントプランナー 埼玉県出身 日本女子体育大学舞踊学専攻卒業 8歳からクラシックバレエを習う。その後大学卒業まで舞踊を専門に学び様々なジャンルを習得。作品では植物や自然環境をモチーフにしたものが多く、人間の仕草や動作から展開される振付や空間を使った演出を得意とする。2014年5月から、自身のコンテンポラリーダンスデュオCyan. (シアン)そしてパフォーマンスアートプロジェクトWHITE PLAN ROOMを主宰し、同世代のアーティストやクリエイターと「performance art」を主とした創作活動を行う。出演は勿論、ディレクションや構成演出、アーティストやアイドル振付指導、イベントプランナーまで活動の幅は多岐に渡る。【project】一部 2014.5 合同展示会ROOM主催 2014.9 performance art LIVE「SUMMER DOME」発表 2015.1 performance art LIVE「starry day」発表 2015.12 event「#WHITEPLANROOM」主催 2016.6  Gallery Conceal Shibuyaコラボイベント「GARDEN」プロデュース 2016.11 performance art LIVE「Lump of lie.」発表 2017.3 Misaki Ushiozu 2017s/s Collection「Monologue」プロデュース その他イベント出演、WS開催、映像制作多数【works】一部・スルースキルズ「LOVE4U」「すきだっちゅーの！」「熱いハートが叫んでる」振付・atME (時代加速装置@’mE)「SE」「Paralyzer」「しゅきちゅちゅ♡」「愛ドル」「○○しかっ！」振付、指導・川嶋志乃舞「遊廓ディスコ」MV芸者風ダンサー振付、出演・吉田凜音「裏原ンウェイ」MV振付、指導・KAGOME   WebCM「野菜のシャワー」動き振付・WEGO 2016S/Sカタログ FUN BOOK モデル・CONVERSE ALL STAR 100th展示会映像出演他多数
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail5">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">森田真衣</h3>
+			<p class="detail_link"><a href="https://www.instagram.com/maipdf/?hl=ja">Instagram https://www.instagram.com/maipdf/?hl=ja</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						-フォトグラファー-<br>大学からフィルムカメラを始め、在学中は主にフィルムでのモノクロ写真撮影に注力。在学中より原宿の写真館に勤め、デジタルカメラでの撮影も学ぶ。<br>その後、フリーランスとなり、united arrows、rosebud、福助、SHIPSなどのブランドサイトでの商品撮りや、イベントの撮影を担当。<br>ボーカルグループやモデルなどのアーティスト写真、宣材写真も撮影している。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail6">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">高橋健太</h3>
+			<p class="detail_link"><a href="https://twitter.com/tkwfunkyphoto">Twitter https://twitter.com/tkwfunkyphoto</a></p>
+			<p class="detail_link"><a href="https://www.instagram.com/tkwfunkyphot/">Instagram https://www.instagram.com/tkwfunkyphot/</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						1989年生まれ、東京都在住。<br>15歳の頃にストリートダンスに出会い、17歳で師LoCoYoKo氏との出会いをきっかけにストリートダンでの人生を歩む決意をするが、バイク事故により首の骨を粉砕骨折。<br>頚椎損傷によって首から下の機能を失い二度と病院から出られないと診断されるが、ダンスへの強い思いだけを胸に血の滲むようなリハビリを行い、半年後に高校に復学。<br>高校卒業後、母校のダンス部のコーチとして振り付けやレッスンを担当。生徒はバトルやコンテストで輝かしい成績を残す。<br>2009年、東京モード学園グラフィック学科入学。専門学校卒業後、国内最大級ファッション通販サイト【ZOZOTOWN】やファッションコーディネートアプリ【WEAR】などを運営する株式会社スタートトゥデイにデザイナーとして入社、主にWEBのデザインを行う。<br>専門学生時代からダンスイベントやライブ、モデルや広告、ファッションなどのカメラマンや、WEB・紙媒体のデザイン、アーティストMVや企業プロモーション映像制作などを行う。<br>2016年3月、フリーランスに転向。<br>ダンスバトルから生まれたバンド【GUSH -The Groove Usher-】<br>若手実力派ダンスチーム【Nicol.Crossence】<br>カントリーミュージックバンド【Lululu】が3ヶ月に1度主催するホームイベント「Orangeのスクリーン」<br>ビクターエンタテイメントと協力した次世代プロジェクト【WEFUNK】などの専属クリエイターとして活動。<br>また、後輩であるMTK.と【無鉄砲】を立ち上げる。<br>無鉄砲では企業と協力し、ダンスをツールとした感情の解放(心体表現)を行うプロジェクトや、教育とダンスの融合をテーマとした活動、ダンス合宿専用施設やダンススクールのプロデュースなどを行う。<br>現在HotNumber Designと無鉄砲を軸に自分の命を救ってくれたダンスで世界を変えるための普及活動やダンサーに対してのサポートをおこなうなど様々な分野にて活動中。<br>事故の後遺症による麻痺など、多くの障害を抱えながらも最強の障害者として同じような状況の障害を持つ人達の希望になりたいと思い、ダンスで培った感性を武器に様々な活動を行っている。<br>事故から10年目の2016年10月、ついに念願のソロダンスバトルで優勝を成し遂げた。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail7">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">ハジメファンタジー (センチメンタル研究家)</h3>
+			<p class="detail_link"><a href="http://hajimefantasy.jp/">公式ホームページ http://hajimefantasy.jp/</a></p>
+			<p class="detail_link"><a href="http://sunege.jp/">公式通販 http://sunege.jp/</a></p>
+			<p class="detail_link"><a href="https://twitter.com/HAJIMEFANTASY">Twitter https://twitter.com/HAJIMEFANTASY</a></p>
+			<p class="detail_link"><a href="https://www.instagram.com/hajimefantasy/">Instagram https://www.instagram.com/hajimefantasy/</a></p>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						”恋に不器用なひとたちへ”をテーマにイラストやデザイン、ポエム、恋愛相談、DJなど多分野で活動。2013年夏、好きなひとが自分の親友と付き合うも何も言えず、無地の白いTシャツに自作で「センチメンタル」とプリントして切ない気持ちをアピール。それを着て歩いているところをVILLAGE VANGUARDスタッフにスカウトされ「センチメンタルTシャツ」の全国発売が決定。その後も「ピュアTシャツ」「ゴメンネアリガトウロンT」「KATAOMOIキャップ」など"うまく言えないけど伝えたい気持ち"を可視化したグッズを続々と発表し、インパクト、メッセージ性の強さが渋谷原宿を中心に口コミで話題に。バンド・アイドル・映画・フェス・YOUTUBERなどジャンルを超えたコラボレーションをはじめ、ZOZOTOWNやラフォーレ原宿でも発売し人気を集める。2015年には音楽系イラストレーター・フクザワと苦しい恋の絵本「胸ギュン」(タグビーム)を発売し、VILLAGE VANGUARDほぼ全国ツアー(39ヶ所でサイン会&ライブポエム)を開催。2016年には、SHIBUYA109 NET SHOPを中心に気持ちを届けることに特化した恋の戦闘服「SUNEGE/すねげ」を展開。同年11月にはツイートや書き下ろしエッセイをまとめた書籍『言葉にしなくちゃ』(ワニブックス)を発売。また24時間体制で電話やメールによる恋愛相談を受け付けポエムで返す『24時間恋愛相談マラソン』を企画し完走するなど、恋に不器用なひとたちを全力で応援している。
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail8">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">YOKO-T fr.BASARASOUL</h3>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						東京を中心に若手の中でも勢いあるCREW、”BASARASOUL”の1人がこの男、YOKO-T(MC/SELECTER)である。彼自身が音楽の道を志したきっかけは、他でもないBASARASOULの影響だ。LA、ジャマイカに渡り修行を重ね今日に至る。リリックの内容を重視する選曲は若手の台頭。これからの東京のREGGAEシーンを担う1人として今注目を集めている。レギュラーイベント 毎月第2.4火曜 PARTY HARD TUESDAY at.渋谷LOUNGE NEO 毎月第3金曜 CITY ROCK FRIDAY at.渋谷JUMP 偶数月第3水曜 RAGGAPUNCH at.乃木坂CACTUS 奇数月第3木曜 RAM JAM DANCEHALL毎月第4土曜 GoodFellas at.渋谷GAME
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail9">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">DJ KAI</h3>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						幼少から両親の影響でソウルミュージックと縁があった。10歳でヒップホップに出会いブラックカルチャーにのめり込む。18歳の時にレコードに目覚め、当時珍しいアナログDJとして六本木IBEXにて木曜レギュラー R&B HIPHOP 80〜00sを回す。その後転々とし現在 吉祥寺でプライベートパーティのdjを月に一回不定期で地元浅草の自分の店でオーガナイズイベントUNCAIN NIGHTを開催中。ジャンル年齢問わずシーンに合わせたDJでフロアをロックする！DJに興味はあるけどどうすればいい？ やりたいけどお金が…設備が…なんて方に！初心者向けのDJ講習を開催します！誰でも参加可能 講習場所 時間などはtwitterにてDMで詳細をお送りします@dj_kai92sまでドシドシご連絡ください！
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="artists_detail detail10">
+			<p class="close">close</p>
+			<img src="" alt="" class="ax">
+			<h3 class="artists_name">まーくん</h3>
+			<div class="detail_under">
+				<p class="detail_text">
+					<span>
+						メイン MC まーくん 自身もストリートダンサーとして活動しながらも、DANCE@TV、DANCE@HERO、GATBSY DANCE COMPETITION等各種イベントで司会を務めなるど、全国的に幅広く活躍しているマルチMC。会場を笑いに包むフリートークを武器に、様々なダンスイベントで会場を盛り上げる。インストラクター、舞台振り付けなど様々な方面でも活躍している。
+					</span>
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -233,11 +373,11 @@
 			<p>8名のアーティスト、クリエーターが、ステージに登壇しMC2人と、等業界を見据えたこと、今の自分に至るまで、クリエーター界の将来についてなど、</p>
 			<!-- スライダー -->
 		  <div class="sliderMc slider">
-		    <div><img src="img/slider/s08.jpg" alt=""></div>
-		    <div><img src="img/slider/s09.jpg" alt=""></div>
-				<div><img src="img/slider/s10.jpg" alt=""></div>
-				<div><img src="img/slider/s11.jpg" alt=""></div>
-		    <div><img src="img/slider/s12.jpg" alt=""></div>
+		    <div><img src="img/sp03/ss08.jpg" alt=""></div>
+		    <div><img src="img/sp03/ss09.jpg" alt=""></div>
+				<div><img src="img/sp03/ss10.jpg" alt=""></div>
+				<div><img src="img/sp03/ss11.jpg" alt=""></div>
+		    <div><img src="img/sp03/ss12.jpg" alt=""></div>
 		  </div>
 			<p>多くの事柄を数々の角度かファッション、音楽、ダンス、アートなどといったクリエーター業界の将来についてトークセッション！</p>
 		</div>
@@ -247,7 +387,7 @@
 	<section class="stage4 stageBase">
 		<div class="contain_wrap04">
 			<h2 class="title04 section_title">LIVE</h2>
-			<p class="floatStr">ヒューマンビートボックスアーティスト"Sh0h"(もう一組)の迫力のLIVEをリアル体感！！</p>
+			<p class="floatStr">ヒューマンビートボックスアーティスト"Sh0h"の迫力のLIVEをリアル体感！！</p>
 			<img src="#" alt="" class="liveImg">
 		</div><!--/.fieldWrap -->
 	</section>
@@ -257,7 +397,12 @@
 		<div class="contain_wrap05">
 			<h2 class="title05 section_title">DJ</h2>
 			<p>ヒップホップ、R&B、からは"DJ KAI"レゲエ サウンドからは "YOKO-T"Black Musicにフォーカスを置くDJタイムを存分にご堪能あれ！</p>
+			<div class="detail">
+
+			</div>
 			<img src="#" alt="" class="djImg01">
+			<div class="svgArea">
+			</div>
 			<div class="underBox">
 				<img src="#" alt="" class="djImg02">
 			</div>
@@ -284,28 +429,28 @@
 	<section class="stage8 stageBase">
 		<div class="contain_wrap08">
 			<h2 class="title08 section_title">TICKET</h2>
-			<p class="ticket_title">前売りチケット</p>
+			<p class="ticket_cate">前売りチケット</p>
 			<p class="ticket_title">A 一般チケット</p>
 			<p class="ticket_note">※就活しないセミナー限定ノベルティ付きチケット
 			当日チケット拝見しお渡しさせて頂きます。</p>
 			<p class="price">¥1,500</p>
-			<p class="ticket_title">B ノベルティ付き</p>
-			<p class="ticket_note">※アーティスト活動などの宣材写真として使えるスタジオ撮影チケット
-			別日にて、4月8日(土曜日)、4月9日(日曜日)のどちらか希望日にてスタジオにお招きしアーティスト活動に必要な写真を撮影しデータでお渡し致します。</p>
-			<p class="price">¥2,000</p>
-			<p class="ticket_title">C プレミアム</p>
-			<p class="price">¥5,000</p>
-			<p class="ticket_title">当日チケット</p>
+			<p class="ticket_title">B プレミアム</p>
+			<p class="ticket_note">※スタジオ撮影付きチケット<br>
+				アーティスト活動などに使用出来るアーティスト写真をデータでお渡しします。それに加え、+α項目より5つの特典項目を選択し得られるアーティスト活動に力強い特典をご用意！詳しくはチケットページへ！</p>
+			<p class="price">¥15,000</p>
+			<p class="ticket_cate">当日チケット</p>
 			<p class="ticket_title">A 学生証提示</p>
 			<p class="price">¥1,500</p>
 			<p class="ticket_title">B 一般</p>
-			<p class="ticket_note">※アーティスト活動などの宣材写真として使えるスタジオ撮影チケット
-			別日にて、4月8日(土曜日)、4月9日(日曜日)のどちらか希望日にてスタジオにお招きしアーティスト活動に必要な写真を撮影しデータでお渡し致します。</p>
 			<p class="price">¥2,500</p>
 			<p class="ticket_title">C プレミアム</p>
-			<p class="price">¥6,000</p>
-			<p class="notice_str">以下のENTRYボタンよりチケット購入サイトへ移動します。</p>
-			<h2 class="entrySp">ENTRY</h2>
+			<p class="ticket_note">※スタジオ撮影付きチケット<br>
+				アーティスト活動などに使用出来るアーティスト写真をデータでお渡しします。それに加え、+α項目より5つの特典項目を選択し得られるアーティスト活動に力強い特典をご用意！詳しくはチケットページへ！</p>
+			<p class="price">¥16,000</p>
+			<p class="notice_str">以下のENTRYボタンよりチケット購入サイトへ移動します。注意事項は購入サイトにてご確認ください。</p>
+			<a href="#">
+				<h2 class="entrySp">ENTRY</h2>
+			</a>
 		</div>
 	</section>
 
